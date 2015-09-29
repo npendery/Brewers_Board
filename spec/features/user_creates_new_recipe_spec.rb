@@ -84,7 +84,7 @@ feature 'user creates recipe', %{
 
     click_on "Submit"
 
-    expect(page).to have_content("Malt/Grains can't be blank")
+    expect(page).to have_content("Malt grains can't be blank")
   end
 
   scenario 'create unsucccessful recipe, without Hops Schedule' do
@@ -103,7 +103,7 @@ feature 'user creates recipe', %{
 
     click_on "Submit"
 
-    expect(page).to have_content("Hops Schedule can't be blank")
+    expect(page).to have_content("Hops schedule can't be blank")
   end
 
   scenario 'create unsucccessful recipe, without Directions' do
