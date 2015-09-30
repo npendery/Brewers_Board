@@ -1,0 +1,28 @@
+<%= f.label :og, "Original Gravity" %>
+<%= f.number_field :og, :class => 'text_field', :step => 'any' %>
+<br>
+<br>
+<%= f.label :fg, "Final Gravity" %>
+<%= f.number_field :fg, :class => 'text_field', :step => 'any' %>
+<br>
+<br>
+<%= f.label :ibus, 'IBUs' %>
+<%= f.number_field :ibus, :class => 'text_field', :step => 'any' %>
+<br>
+<br>
+<%= f.label :abv, "Alcohol by volume" %>
+<%= f.number_field :abv, :class => 'text_field', :step => 'any' %>
+<br>
+<br>
+
+t.decimal :og, :precision => 4, :scale => 3
+t.decimal :fg, :precision => 4, :scale => 3
+t.decimal :ibus, :precision => 4, :scale => 1
+t.decimal :abv, :precision => 3, :scale => 1
+
+
+# select "India Pale Ale", from: "Beer Type"
+# fill_in "Original Gravity", with: 1.080
+# fill_in "Final Gravity", with: 1.015
+# fill_in "IBUs", with: 90
+# fill_in "Alcohol by volume", with: 6.5

@@ -1,0 +1,27 @@
+<%= form_for @recipe do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<br>
+	<br>
+	<%= f.label :description %>
+	<%= f.text_field :description %>
+	<br>
+	<br>
+	<%= f.label :malt_grains, 'Malt/Grains' %>
+	<%= f.text_field :malt_grains %>
+	<br>
+	<br>
+	<%= f.label :hops_schedule, "Hops Schedule" %>
+	<%= f.text_field :hops_schedule %>
+	<br>
+	<br>
+	<%= f.label :directions, 'Directions' %>
+	<%= f.text_field :directions %>
+	<br>
+	<br>
+	<%= f.label :yeast, 'Yeast' %>
+	<%= f.text_field :yeast %>
+	<br>
+	<br>
+	<%= f.submit "Submit" %>
+<% end %>
