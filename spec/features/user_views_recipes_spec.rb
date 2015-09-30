@@ -7,19 +7,22 @@ feature 'user views recipes', %{
 } do
   # Acceptance Criteria
   # user must be able to see all recipes created
-  #
+  # most recent recipies show first
 
   scenario 'views recipe succcessfully' do
     user = FactoryGirl.create(:user)
-    recipe = FactoryGirl.create(:recipe)
+    recipe1 = FactoryGirl.create(:recipe)
+    recipe2 = FactoryGirl.create(:recipe)
     sign_in(user)
 
-    visits '/'
+    visit '/'
 
     click_on "View all user recipes"
 
-    click_on "Submit"
-
-    expect(page).to have_content("Recipe added.")
-    expect(page).to have_content("HopperHead")
+    expect(page).to have_content(recipe1.name)
+    expect(page).to have_content(recipe1.description)
+    expect(page).to have_content(recipe2.name)
+    expect(page).to have_content(recipe2.description)
+    expect(recipe2.name).to be > recipe1.name
   end
+end
