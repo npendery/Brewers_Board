@@ -1,1 +1,3 @@
-![Build Status](https://codeship.com/projects/<YOUR_PROJECT_UUID>/status?branch=master)![Code Climate](https://codeclimate.com/github/<YOUR_GITHUB_USERNAME>/<YOUR_REPO_NAME>.png) ![Coverage Status](https://coveralls.io/repos/<YOUR_GITHUB_USERNAME>/<YOUR_REPO_NAME>/badge.png)
+![Build Status](https://codeship.com/projects/2ad75020-4934-0133-b685-168d58eb1296/status?branch=master)
+![Code Climate](https://codeclimate.com/github/npenery/Brewers_Board.png)
+![Coverage Status](https://coveralls.io/repos/npenery/Brewers_Board/badge.png)
