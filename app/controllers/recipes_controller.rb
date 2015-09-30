@@ -33,7 +33,7 @@ class RecipesController < ApplicationController
             :directions,
             :yeast,
             :user
-          ]
+           ]
     params.require(:recipe).permit(list)
   end
 end
