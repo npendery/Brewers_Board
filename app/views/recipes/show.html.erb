@@ -21,4 +21,9 @@
 <div> <%= @recipe.yeast %> </div>
 <br>
 <br>
+<% if @recipe.user == current_user %>
+  <%= link_to "Edit Recipe", edit_recipe_path(@recipe) %>
+<% end %>
+<br>
+<br>
 <%= link_to "Back to Recipes", recipes_path %>
