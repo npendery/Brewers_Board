@@ -7,9 +7,13 @@ FactoryGirl.define do
     password_confirmation 'password'
   end
 
-  factory :user do
-    sequence(:email) { |n| "user#{n}@example.com" }
-    password 'password'
-    password_confirmation 'password'
+  factory :recipe do
+    sequence(:name) { |n| "recipe #{n}" }
+    description "Hoppy and dense"
+    malt_grains "List \n of \n ingredients"
+    hops_schedule "First \n Second \n Third"
+    directions "You do this"
+    yeast "Yeast selection"
+    user
   end
 end
