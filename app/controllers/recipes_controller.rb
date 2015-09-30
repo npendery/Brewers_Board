@@ -27,6 +27,23 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
   end
 
+  def edit
+    @recipe = Recipe.find(params[:id])
+  end
+
+  def update
+    authenticate_user!
+    @recipe = Recipe.find(params[:id])
+
+    if @recipe.update(recipe_params)
+      flash[:accepted] = "Recipe updated."
+      redirect_to recipe_path(@recipe)
+    else
+      flash[:errors] = @recipe.errors.full_messages.join(". ")
+      render :edit
+    end
+  end
+
   protected
 
   def recipe_params
