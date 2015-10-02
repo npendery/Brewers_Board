@@ -25,7 +25,7 @@ feature 'user edits recipe', %{
 
     fill_in "Description", with: "Hoppy with a citrus bite"
 
-    click_on "Submit"
+    click_on "Update recipe"
 
     expect(page).to have_content("Recipe updated.")
     expect(page).to have_content("Hoppy with a citrus bite")
@@ -45,7 +45,7 @@ feature 'user edits recipe', %{
 
     fill_in "Description", with: ""
 
-    click_on "Submit"
+    click_on "Update recipe"
 
     expect(page).to have_content("Description can't be blank")
   end
