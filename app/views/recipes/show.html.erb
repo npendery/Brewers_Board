@@ -28,16 +28,37 @@
 
 <% if @recipe.reviews.find_by(user: current_user) == nil %>
   <div class="row">
-    <%= link_to "Review Recipe", new_recipe_review_path(@recipe), remote: true %>
-    <div class="col-md-6 col-md-offset-2" id="review-form" style="display:none;">
-    </div>
+    <%= link_to "Review Recipe", new_recipe_review_path(@recipe) %>
   </div>
 <% end %>
 
 <div class="row">
-  <div class="col-md-7 col-md-offset-1" id="reviews">
-    <%= render "reviews_index", object: @reviews %>
-  </div>
+  <% if @reviews.present? %>
+    <h5>Reviews</h5>
+    <% @reviews.each do |review| %>
+      <ul>
+        <div class="row">
+          <div class="columns large-12 small-6">
+            <li>
+              <%= review.title.capitalize %>
+            </li>
+            <li>Rating:
+              <%= review.rating %>
+            </li>
+            <% if review.description == nil %>
+            <li> Description:
+              <%= review.description %>
+            </li>
+            <% end %>
+            <% if current_user == review.user %>
+              <li class="small-font"><%= link_to "Edit", edit_recipe_review_path(@recipe, review) %> or
+              <%= link_to "Delete", review_path(review), method: :delete %></li>
+            <% end %>
+          </div>
+        </div>
+      </ul>
+    <% end %>
+  <% end %>
 </div>
 
 <%= link_to "Back to Recipes", recipes_path %>
