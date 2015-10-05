@@ -18,13 +18,13 @@ feature 'user creates recipe', %{
 
     fill_in "Name", with: "HopperHead"
     fill_in "Description", with: "Hoppy and dense"
-    # save_and_open_page
     fill_in "Malt/Grains", with: "List \n of \n ingredients"
     fill_in "Hops Schedule", with: "First \n Second \n Third"
     fill_in "Directions", with: "You do this"
     fill_in "Yeast", with: "Yeast selection"
+    # save_and_open_page
 
-    click_on "Create recipe"
+    click_on "Submit"
 
     expect(page).to have_content("Recipe added.")
     expect(page).to have_content("HopperHead")
