@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  respond_to :html, :js
+
   def index
     @recipes = Recipe.all.order(created_at: :desc)
   end
@@ -9,7 +11,6 @@ class RecipesController < ApplicationController
 
   def create
     authenticate_user!
-    # binding.pry
     @recipe = Recipe.new(recipe_params)
     @user = current_user
     @recipe.user = @user
@@ -25,6 +26,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @reviews = @recipe.reviews
   end
 
   def edit
@@ -52,6 +54,13 @@ class RecipesController < ApplicationController
   end
 
   protected
+
+  # def authorize_user
+  #   @review = Review.find(params[:id])
+  #   if !(current_user.admin? || @review.user == current_user)
+  #     raise ActionController::RoutingError.new("Not Found")
+  #   end
+  # end
 
   def recipe_params
     list = [:name,

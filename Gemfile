@@ -14,6 +14,7 @@ gem 'as-duration'
 gem 'kaminari'
 gem 'carrierwave'
 gem 'fog'
+gem 'best_in_place', '~> 3.0.1'
 
 group :test do
   gem 'coveralls', require: false

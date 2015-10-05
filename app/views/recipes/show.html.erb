@@ -1,30 +1,64 @@
 <h3><%= @recipe.name %></h3>
-<br>
-<br>
+
+
 <h5> Description </h5>
 <div> <%= @recipe.description %> </div>
-<br>
-<br>
+
+
 <h5> Malt and Grains </h5>
 <div> <%= @recipe.malt_grains %> </div>
-<br>
-<br>
+
+
 <h5> Hops Schedule </h5>
 <div> <%= @recipe.hops_schedule %> </div>
-<br>
-<br>
+
+
 <h5> Directions </h5>
 <div> <%= @recipe.directions %> </div>
-<br>
-<br>
+
+
 <h5> Yeast </h5>
 <div> <%= @recipe.yeast %> </div>
-<br>
-<br>
+
+
 <% if @recipe.user == current_user %>
   <%= link_to "Edit Recipe", edit_recipe_path(@recipe) %>
   <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete %>
 <% end %>
-<br>
-<br>
+
+<% if @recipe.reviews.find_by(user: current_user) == nil %>
+  <div class="row">
+    <%= link_to "Review Recipe", new_recipe_review_path(@recipe) %>
+  </div>
+<% end %>
+
+<div class="row">
+  <% if @reviews.present? %>
+    <h5>Reviews</h5>
+    <% @reviews.each do |review| %>
+      <ul>
+        <div class="row">
+          <div class="columns large-12 small-6">
+            <li>
+              <%= review.title.capitalize %>
+            </li>
+            <li>Rating:
+              <%= review.rating %>
+            </li>
+            <% if review.description == nil %>
+            <li> Description:
+              <%= review.description %>
+            </li>
+            <% end %>
+            <% if current_user == review.user %>
+              <li class="small-font"><%= link_to "Edit", edit_recipe_review_path(@recipe, review) %> or
+              <%= link_to "Delete", review_path(review), method: :delete %></li>
+            <% end %>
+          </div>
+        </div>
+      </ul>
+    <% end %>
+  <% end %>
+</div>
+
 <%= link_to "Back to Recipes", recipes_path %>
