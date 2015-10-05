@@ -1,0 +1,20 @@
+<% if @reviews.present? %>
+  <h5>Reviews</h5>
+  <% @reviews.each do |review| %>
+    <ul>
+      <div class="row">
+        <div class="columns small-6">
+          <li>
+            <%= review.title.capitalize %>
+          </li>
+          <li>Rating:
+            <%= review.rating %>
+          </li>
+          <li> Description:
+            <%= review.description %>
+          </li>
+        </div>
+      </div>
+    </ul>
+  <% end %>
+<% end %>

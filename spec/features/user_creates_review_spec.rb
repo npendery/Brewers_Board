@@ -23,7 +23,8 @@ feature 'user reviews a recipe', %{
 
     click_on "Review recipe"
 
-    fill_in "Your Review", with: "Love it, but would add more 30 minute hops"
+    fill_in "Title", with: "Love the malt character"
+    fill_in "Description", with: "Would add more 30 minute hops for mid bitterness though"
     choose 4
 
     click_on "Create review"
@@ -47,7 +48,7 @@ feature 'user reviews a recipe', %{
 
     click_on "Create review"
 
-    expect(page).to have_content("Description can't be blank.")
+    expect(page).to have_content("Title can't be blank.")
     expect(page).to have_content("Rating can't be blank.")
   end
 
@@ -64,14 +65,14 @@ feature 'user reviews a recipe', %{
 
     click_on "Review recipe"
 
-    fill_in "Your Review", with: "Love it, but would add more 30 minute hops"
+    fill_in "Title", with: "Love the malt character"
+    fill_in "Description", with: "Would add more 30 minute hops for mid bitterness though"
     choose 4
 
     click_on "Create review"
 
     expect(page).to have_content("Review added.")
     expect(page).to have_content(recipe1.name)
-    expect(page).to have_content("Update your review")
     expect(page).to_not have_content("Review recipe")
   end
 end

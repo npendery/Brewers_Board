@@ -22,9 +22,8 @@ feature 'user creates recipe', %{
     fill_in "Hops Schedule", with: "First \n Second \n Third"
     fill_in "Directions", with: "You do this"
     fill_in "Yeast", with: "Yeast selection"
-    # save_and_open_page
 
-    click_on "Submit"
+    click_on "Create recipe"
 
     expect(page).to have_content("Recipe added.")
     expect(page).to have_content("HopperHead")

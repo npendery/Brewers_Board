@@ -1,4 +1,6 @@
-<%= form_for [@review, @rating] do |f| %>
+<%= form_for [@recipe, @review] do |f| %>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
 	<%= f.label :rating %>
 	<%= f.collection_radio_buttons :rating, Review::RATINGS, :to_i, :to_i %>
 	<%= f.label :description %>

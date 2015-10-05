@@ -1,5 +1,6 @@
 class Recipe < ActiveRecord::Base
   belongs_to :user
+  has_many :reviews
 
   validates :name, presence: true
   validates :name, uniqueness: true
@@ -9,4 +10,12 @@ class Recipe < ActiveRecord::Base
   validates :directions, presence: true
   validates :yeast, presence: true
   validates :user, presence: true
+
+  def average_score
+    score = 0
+    reviews.each do |review|
+      score += review.rating
+    end
+    score /reviews.count
+  end
 end

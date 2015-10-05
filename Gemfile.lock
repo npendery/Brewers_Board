@@ -41,6 +41,9 @@ GEM
     arel (6.0.3)
     as-duration (0.1.0)
     bcrypt (3.1.10)
+    best_in_place (3.0.3)
+      actionpack (>= 3.2)
+      railties (>= 3.2)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -342,6 +345,7 @@ PLATFORMS
 
 DEPENDENCIES
   as-duration
+  best_in_place (~> 3.0.1)
   capybara
   carrierwave
   coveralls
