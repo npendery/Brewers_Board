@@ -16,4 +16,11 @@ FactoryGirl.define do
     yeast "Yeast selection"
     user
   end
+
+  factory :review do
+    sequence(:title) { |n| "title#{n}"}
+    rating 4
+    recipe
+    user
+  end
 end

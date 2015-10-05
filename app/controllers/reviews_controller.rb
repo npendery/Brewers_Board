@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  before_action :authorize_user, only: [:edit, :update, :destroy]
+  # before_action :authorize_user, only: [:edit, :update, :destroy]
 
   def index
     @reviews = @recipe.reviews
@@ -26,10 +26,13 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    @review = Review.find(params[:id])
+    @recipe = @review.recipe
   end
 
   def update
     @review = Review.find(params[:id])
+    @recipe = @review.recipe
     if @review.update(review_params)
       flash[:notice] = 'Review Updated'
       redirect_to recipe_path(@recipe)
@@ -40,20 +43,22 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    @review = Review.find(params[:id])
+    @recipe = @review.recipe
     @review.destroy
 
     flash[:notice] = "Review deleted."
-    redirect_to recipe_path(@review.recipe)
+    redirect_to recipe_path(@recipe)
   end
 
   protected
 
-  # # def authorize_user
-  # #   @review = Review.find(params[:id])
-  # #   if !(@review.user == current_user)
-  # #     raise ActionController::RoutingError.new("Not Found")
-  # #   end
-  # # end
+  # def authorize_user
+  #   @review = Review.find(params[:id])
+  #   if !(@review.user == current_user)
+  #     raise ActionController::RoutingError.new("Not Found")
+  #   end
+  # end
   #
   # def find_recipe
   #   @recipe = Recipe.find(params[:recipe_id])
