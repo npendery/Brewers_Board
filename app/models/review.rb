@@ -7,5 +7,5 @@ class Review < ActiveRecord::Base
   validates :title, presence: true
   validates :rating, presence: true
 
-  RATINGS = [1,2,3,4,5]
+  RATINGS = [1, 2, 3, 4, 5]
 end

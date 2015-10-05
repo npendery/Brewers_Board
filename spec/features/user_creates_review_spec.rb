@@ -20,11 +20,11 @@ feature 'user reviews a recipe', %{
     click_on "View all user recipes"
 
     click_on recipe1.name
-# save_and_open_page
+
     click_on "Review Recipe"
 
     fill_in "review[title]", with: "Love the malt character"
-    fill_in "Description", with: "Would add more 30 minute hops for mid bitterness though"
+    fill_in "Description", with: "Would add more 30 minute hops for bitterness"
     choose 4
 
     click_on "Create review"
@@ -66,7 +66,7 @@ feature 'user reviews a recipe', %{
     click_on "Review Recipe"
 
     fill_in "Title", with: "Love the malt character"
-    fill_in "Description", with: "Would add more 30 minute hops for mid bitterness though"
+    fill_in "Description", with: "Would add more 30 minute hops for bitterness"
     choose 4
 
     click_on "Create review"

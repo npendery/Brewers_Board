@@ -16,6 +16,6 @@ class Recipe < ActiveRecord::Base
     reviews.each do |review|
       score += review.rating
     end
-    score /reviews.count
+    score / reviews.count
   end
 end

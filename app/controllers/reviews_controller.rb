@@ -60,6 +60,7 @@ class ReviewsController < ApplicationController
   # end
 
   def review_params
-    params.require(:review).permit(:rating, :title, :description, :recipe_id, :user_id)
+    list = [:rating, :title, :description, :recipe_id, :user_id]
+    params.require(:review).permit(list)
   end
 end
