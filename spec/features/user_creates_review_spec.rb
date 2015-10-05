@@ -20,10 +20,10 @@ feature 'user reviews a recipe', %{
     click_on "View all user recipes"
 
     click_on recipe1.name
-
+# save_and_open_page
     click_on "Review Recipe"
 
-    fill_in "Title", with: "Love the malt character"
+    fill_in "review[title]", with: "Love the malt character"
     fill_in "Description", with: "Would add more 30 minute hops for mid bitterness though"
     choose 4
 
@@ -48,8 +48,8 @@ feature 'user reviews a recipe', %{
 
     click_on "Create review"
 
-    expect(page).to have_content("Title can't be blank.")
-    expect(page).to have_content("Rating can't be blank.")
+    expect(page).to have_content("Title can't be blank")
+    expect(page).to have_content("Rating can't be blank")
   end
 
   scenario 'cant review recipe twice' do

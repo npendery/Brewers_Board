@@ -9,7 +9,4 @@ RSpec.describe Review, type: :model do
 
   it { should have_valid(:title).when('yuk') }
   it { should_not have_valid(:title).when('', nil) }
-
-  it { should have_valid(:description).when('dont like it') }
-  it { should_not have_valid(:description).when('', nil) }
 end
