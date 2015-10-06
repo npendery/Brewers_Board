@@ -35,6 +35,13 @@ ActiveRecord::Schema.define(version: 20151006194547) do
 
   add_index "groups", ["name"], name: "index_groups_on_name", using: :btree
 
+  create_table "memberships", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "group_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "recipes", force: :cascade do |t|
     t.string   "name",          null: false
     t.string   "description",   null: false
@@ -76,12 +83,5 @@ ActiveRecord::Schema.define(version: 20151006194547) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-
-  create_table "users_in_groups", force: :cascade do |t|
-    t.integer  "user_id",    null: false
-    t.integer  "group_id",   null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
 end

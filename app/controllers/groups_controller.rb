@@ -25,6 +25,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @current_member = Membership.where(user_id: current_user, group_id: @group).first
   end
 
   def edit
