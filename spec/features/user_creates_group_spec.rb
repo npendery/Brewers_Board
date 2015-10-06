@@ -7,7 +7,7 @@ feature 'user creates group', %{
 } do
   # Acceptance Criteria
   # user must specify all necessary information for the group to save
-  # creater must be the admin of the group
+  # creater must be the owner of the group
 
   scenario 'creates group succcessfully' do
     user = FactoryGirl.create(:user)

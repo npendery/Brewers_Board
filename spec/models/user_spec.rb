@@ -1,15 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending describe "#admin?" do
-    it "is not an admin if the role is not admin" do
+  pending describe "#owner?" do
+    it "is not an owner if the role is not owner" do
       user = FactoryGirl.create(:user, role: "member")
-      expect(user.admin?).to eq(false)
+      expect(user.owner?).to eq(false)
     end
 
-    it "is an admin if the role is admin" do
-      user = FactoryGirl.create(:user, role: "admin")
-      expect(user.admin?).to eq(true)
+    it "is an owner if the role is owner" do
+      user = FactoryGirl.create(:user, role: "owner")
+      expect(user.owner?).to eq(true)
     end
   end
 end

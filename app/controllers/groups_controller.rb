@@ -12,7 +12,7 @@ class GroupsController < ApplicationController
   def create
     authenticate_user!
     @group = Group.new(group_params)
-    @group.admin = current_user
+    @group.owner = current_user
 
     if @group.save
       flash[:accepted] = "Group added."
@@ -56,7 +56,7 @@ class GroupsController < ApplicationController
 
   # def authorize_user
   #   @review = Review.find(params[:id])
-  #   if !(current_user.admin? || @review.user == current_user)
+  #   if !(current_user.owner? || @review.user == current_user)
   #     raise ActionController::RoutingError.new("Not Found")
   #   end
   # end
@@ -69,7 +69,7 @@ class GroupsController < ApplicationController
     list = [:name,
             :description,
             :location,
-            :admin_id
+            :owner_id
            ]
     params.require(:group).permit(list)
   end

@@ -57,7 +57,7 @@ class RecipesController < ApplicationController
 
   # def authorize_user
   #   @review = Review.find(params[:id])
-  #   if !(current_user.admin? || @review.user == current_user)
+  #   if !(current_user.owner? || @review.user == current_user)
   #     raise ActionController::RoutingError.new("Not Found")
   #   end
   # end
