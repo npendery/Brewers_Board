@@ -1,0 +1,25 @@
+<h3><%= @group.name %></h3>
+<h4>Created by: <%= link_to @group.admin.username, user_path(@group.admin) %></h4>
+
+<h5> Location </h5>
+<div> <%= @group.location %> </div>
+
+<h5> Description </h5>
+<div> <%= @group.description %> </div>
+
+<h5> Members </h5>
+<div>
+  <li><%= link_to @group.admin.username, user_path(@group.admin) %></li>
+  <% if @group.users.present? %>
+    <% @group.users.each do |user| %>
+    <li> <%= link_to user.username, user_path(user) %> </li>
+    <% end %>
+  <% end %>
+</div>
+
+<% if @group.admin == current_user %>
+  <%= link_to "Edit group", edit_group_path(@group) %>
+  <%= link_to "Delete group", group_path(@group), method: :delete %>
+<% end %>
+
+<%= link_to "Back to groups", groups_path %>
