@@ -18,6 +18,7 @@ gem 'best_in_place', '~> 3.0.1'
 
 group :test do
   gem 'coveralls', require: false
+  gem 'database_cleaner'
 end
 
 group :development, :test do

@@ -1,6 +1,6 @@
-class CreateUsersInGroups < ActiveRecord::Migration
+class CreateMemberships < ActiveRecord::Migration
   def change
-    create_table :users_in_groups do |t|
+    create_table :memberships do |t|
       t.belongs_to :user, null: false
       t.belongs_to :group, null: false
 

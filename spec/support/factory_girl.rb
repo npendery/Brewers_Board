@@ -2,9 +2,9 @@ require 'factory_girl'
 
 FactoryGirl.define do
   factory :user do
-    sequence(:username) { |n| "user#{n}" }
+    sequence(:username) { |n| "newuser#{n}" }
     city "Boston, MA"
-    sequence(:email) { |n| "user#{n}@example.com" }
+    sequence(:email) { |n| "newuser#{n}@example.com" }
     password 'password'
     password_confirmation 'password'
   end
@@ -24,5 +24,12 @@ FactoryGirl.define do
     rating 4
     recipe
     user
+  end
+
+  factory :group do
+    sequence(:name) { |n| "name#{n}" }
+    description "Beer Makin"
+    location "Everywhere"
+    admin FactoryGirl.create(:user)
   end
 end
