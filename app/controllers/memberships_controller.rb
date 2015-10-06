@@ -1,6 +1,6 @@
 class MembershipsController < ApplicationController
   def create
-    @membership = current_user.memberships.build(:group_id => params[:group_id])
+    @membership = current_user.memberships.build(group_id: params[:group_id])
     if @membership.save
       flash[:notice] = "You have joined this group."
       redirect_to group_path(params[:group_id])

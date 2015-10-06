@@ -25,7 +25,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @current_member = Membership.where(user_id: current_user, group_id: @group).first
+    @current_member = current_member
   end
 
   def edit
@@ -60,6 +60,10 @@ class GroupsController < ApplicationController
   #     raise ActionController::RoutingError.new("Not Found")
   #   end
   # end
+
+  def current_member
+    Membership.where(user_id: current_user, group_id: @group).first
+  end
 
   def group_params
     list = [:name,
