@@ -13,9 +13,13 @@ class Recipe < ActiveRecord::Base
 
   def average_score
     score = 0
-    reviews.each do |review|
-      score += review.rating
+    if reviews.count == 0
+      score
+    else
+      reviews.each do |review|
+        score += review.rating
+      end
+      score / reviews.count
     end
-    score / reviews.count
   end
 end

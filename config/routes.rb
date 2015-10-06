@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   end
 
   resources :reviews
+
+  resources :users, only: [:index, :show]
 end
