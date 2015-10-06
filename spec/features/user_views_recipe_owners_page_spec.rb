@@ -30,7 +30,6 @@ feature 'user views other user page', %{
   scenario 'views user index succcessfully' do
     user1 = FactoryGirl.create(:user)
     user2 = FactoryGirl.create(:user)
-    recipe = FactoryGirl.create(:recipe, user: user2)
     sign_in(user1)
 
     visit '/'
