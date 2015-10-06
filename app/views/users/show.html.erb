@@ -1,0 +1,24 @@
+<h3>User Info</h3>
+
+<h5> Username </h5>
+<div> <%= @user.username %> </div>
+
+<h5> City </h5>
+<div> <%= @user.city %> </div>
+
+<h5> Contributed Recipes </h5>
+<% if @user.recipes.present? %>
+  <div> <% @user.recipes.each do |recipe| %>
+    <li> Name: <%= recipe.name %> </li>
+    <li> Average Score:
+      <% if recipe.reviews.count != 0 %>
+        <%= recipe.average_score %>
+      <% else %>
+        No Reviews Yet
+      <% end %>
+    </li>
+    <% end %>
+  </div>
+<% end %>
+
+<%= link_to "All Users", users_path %>
