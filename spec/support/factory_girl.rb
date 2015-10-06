@@ -18,7 +18,7 @@ FactoryGirl.define do
   end
 
   factory :review do
-    sequence(:title) { |n| "title#{n}"}
+    sequence(:title) { |n| "title#{n}" }
     rating 4
     recipe
     user

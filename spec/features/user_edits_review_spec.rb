@@ -20,7 +20,7 @@ feature 'user edits a review', %{
     click_on "View all user recipes"
 
     click_on recipe1.name
-# save_and_open_page
+
     click_on "Edit Review"
 
     fill_in "Description", with: "Would add more 30 minute hops for bitterness"
@@ -43,6 +43,8 @@ feature 'user edits a review', %{
     click_on "View all user recipes"
 
     click_on recipe1.name
+    
+    expect(page).to have_content(review.title)
 
     click_on "Edit Review"
 
