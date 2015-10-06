@@ -43,8 +43,8 @@ feature 'user edits a review', %{
     click_on "View all user recipes"
 
     click_on recipe1.name
-    
-    expect(page).to have_content(review.title)
+
+    expect(page).to have_content(review.title.capitalize)
 
     click_on "Edit Review"
 
