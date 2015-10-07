@@ -62,7 +62,7 @@ feature 'user adds event to group', %{
     fill_in "City", with: "Cambridge"
 
     select "MA", from: "State"
-    
+
     fill_in "Date", with: "10/12/15"
 
     select "2:00pm", from: "Time"

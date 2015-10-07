@@ -63,5 +63,5 @@ class Event < ActiveRecord::Base
             "WV",
             "WI",
             "WY"
-          ]
+           ]
 end
