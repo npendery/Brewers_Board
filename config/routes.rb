@@ -10,7 +10,11 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show, :update, :destroy]
 
-  resources :groups
+  resources :groups do
+    resources :group_messages
+  end
+
+  resources :group_messages
 
   resources :memberships, only: [:create, :destroy]
 end
