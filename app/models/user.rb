@@ -11,5 +11,5 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true
   validates :username, presence: true
   validates :city, presence: true
-  validates :admin, :inclusion => {:in => [true, false]}
+  validates :admin, inclusion: { in: [true, false] }
 end

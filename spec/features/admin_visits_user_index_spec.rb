@@ -42,15 +42,11 @@ feature 'admin visits users index', %{
 
     expect(page).to have_content(user1.username)
     expect(page).to have_content(user2.username)
-# save_and_open_page
-#     find ("a[href$="ABC"]:first") do
-#       click_link "Delete user"
-#     end
+
     target_text = ".member-list#{user1.id}"
     within (target_text) do
       click_link "Delete user"
     end
-    # first(:css, "#delete-user").click
 
     expect(page).to_not have_content(user1.username)
     expect(page).to have_content(user2.username)
