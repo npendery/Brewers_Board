@@ -10,9 +10,18 @@
 
   <tbody>
     <% @users.each do |user| %>
-      <tr>
+      <tr class="member-list">
         <td><%= link_to user.username, user_path(user) %></td>
         <td><%= user.city %></td>
+        <% if current_user.admin == true %>
+        <td>Admin: <%= user.admin %>
+        <td class="delete-user">
+        <%= link_to "Delete user", user_path(user), method: :delete %>
+        </td>
+        <td class="change-status">
+        <%= link_to "Change admin status", user_path(user), method: :put %>
+        </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

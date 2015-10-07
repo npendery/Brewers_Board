@@ -7,6 +7,7 @@ FactoryGirl.define do
     sequence(:email) { |n| "newuser#{n}@example.com" }
     password 'password'
     password_confirmation 'password'
+    admin false
   end
 
   factory :recipe do
@@ -30,6 +31,6 @@ FactoryGirl.define do
     sequence(:name) { |n| "name#{n}" }
     description "Beer Makin"
     location "Everywhere"
-    admin FactoryGirl.create(:user)
+    owner FactoryGirl.create(:user)
   end
 end

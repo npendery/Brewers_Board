@@ -6,7 +6,8 @@ class RegistrationsController < Devise::RegistrationsController
             :city,
             :email,
             :password,
-            :password_confirmation
+            :password_confirmation,
+            :admin
            ]
     params.require(:user).permit(list)
   end
@@ -17,7 +18,8 @@ class RegistrationsController < Devise::RegistrationsController
             :email,
             :password,
             :password_confirmation,
-            :current_password
+            :current_password,
+            :admin
            ]
     params.require(:user).permit(list)
   end

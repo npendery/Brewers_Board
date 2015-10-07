@@ -11,7 +11,7 @@ feature 'user joins group', %{
   scenario 'joins group succcessfully' do
     user1 = FactoryGirl.create(:user)
     user2 = FactoryGirl.create(:user)
-    group = FactoryGirl.create(:group, admin: user2)
+    group = FactoryGirl.create(:group, owner: user2)
 
     sign_in(user1)
 

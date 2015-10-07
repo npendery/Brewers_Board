@@ -22,7 +22,7 @@
 <div> <%= @recipe.yeast %> </div>
 
 
-<% if @recipe.user == current_user %>
+<% if @recipe.user == current_user || current_user.admin %>
   <%= link_to "Edit Recipe", edit_recipe_path(@recipe) %>
   <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete %>
 <% end %>
@@ -51,7 +51,7 @@
               <%= review.description %>
             </li>
             <% end %>
-            <% if current_user == review.user %>
+            <% if current_user == review.user || current_user.admin %>
               <li class="small-font"><%= link_to "Edit Review", edit_review_path(review) %> or
               <%= link_to "Delete Review", review_path(review), method: :delete %></li>
             <% end %>
