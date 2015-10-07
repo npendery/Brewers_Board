@@ -17,7 +17,7 @@
   <% end %>
 </div>
 
-<% if @group.owner == current_user %>
+<% if @group.owner == current_user || current_user.admin %>
   <%= link_to "Edit group", edit_group_path(@group) %>
   <%= link_to "Delete group", group_path(@group), method: :delete %>
 <% end %>

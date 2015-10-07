@@ -15,8 +15,12 @@
         <td><%= user.city %></td>
         <% if current_user.admin == true %>
         <td>Admin: <%= user.admin %>
-        <td><%= link_to "Delete user", user_path(user), method: :delete %></td>
-        <td><%= link_to "Change admin status", user_path(user), method: :put %></td>
+        <td class="delete-user">
+        <%= link_to "Delete user", user_path(user), method: :delete %>
+        </td>
+        <td class="change-status">
+        <%= link_to "Change admin status", user_path(user), method: :put %>
+        </td>
         <% end %>
       </tr>
     <% end %>

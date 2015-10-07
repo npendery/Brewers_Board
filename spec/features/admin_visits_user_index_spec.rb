@@ -21,7 +21,7 @@ feature 'admin visits users index', %{
     expect(page).to have_content(user1.username)
     expect(page).to have_content(user2.username)
     expect(page).to have_content("Delete user")
-    expect(page).to have_content("Make admin")
+    expect(page).to have_content("Change admin status")
   end
 
   scenario 'member fails to see admin functions' do
@@ -30,28 +30,33 @@ feature 'admin visits users index', %{
     visit users_path
 
     expect(page).to_not have_content("Delete user")
-    expect(page).to_not have_content("Make admin")
+    expect(page).to_not have_content("Change admin status")
   end
 
-  scenario 'admin deletes user' do
+  pending scenario 'admin deletes user' do
     user1 = FactoryGirl.create(:user)
     user2 = FactoryGirl.create(:user, admin: true)
 
     sign_in(user2)
     visit users_path
 
+    expect(page).to have_content(user1.username)
     expect(page).to have_content(user2.username)
 # save_and_open_page
 #     find ("a[href$="ABC"]:first") do
 #       click_link "Delete user"
 #     end
-
-    find(:xpath, "//a[@href='/users/#{user1.id}']").click
+    target_text = ".member-list#{user1.id}"
+    within (target_text) do
+      click_link "Delete user"
+    end
+    # first(:css, "#delete-user").click
 
     expect(page).to_not have_content(user1.username)
+    expect(page).to have_content(user2.username)
   end
 
-  scenario 'admin makes another user an admin' do
+  pending scenario 'admin makes another user an admin' do
     user1 = FactoryGirl.create(:user)
     user2 = FactoryGirl.create(:user, admin: true)
 
