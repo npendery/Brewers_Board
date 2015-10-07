@@ -33,9 +33,9 @@ feature 'user adds event to group', %{
 
     fill_in "Date", with: "10/12/15"
 
-    select "2:00pm", from: "Time"
+    fill_in "Time", with: "2:00pm"
 
-    click_on "Submit"
+    click_on "Create event"
 
     expect(page).to have_content("Event added")
     expect(page).to have_content(group.name)
@@ -65,9 +65,9 @@ feature 'user adds event to group', %{
 
     fill_in "Date", with: "10/12/15"
 
-    select "2:00pm", from: "Time"
+    fill_in "Time", with: "2:00pm"
 
-    click_on "Submit"
+    click_on "Create event"
 
     expect(page).to have_content("Title can't be blank")
     expect(page).to have_content("New Event")

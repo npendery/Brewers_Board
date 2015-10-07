@@ -1,0 +1,33 @@
+<h5> Upcoming Events <h5>
+  <% if @upcoming_events.present? %>
+    <% @upcoming_events.each do |event| %>
+    <li>Title: <%= event.title %> </li>
+    <li>Description: <%= event.description %> </li>
+    <li>Address <br>
+    <%= event.street %>
+    <%= event.city %>
+    <%= event.state %>
+    </li>
+    <li>Date: <%= event.date %> </li>
+    <li>Time: <%= event.time %> </li>
+    <% end %>
+  <% else %>
+    Currently no upcoming events!
+  <% end %>
+
+<h5> Past Events <h5>
+  <% if @past_events.present? %>
+    <% @past_events.each do |event| %>
+    <li>Title: <%= event.title %> </li>
+    <li>Description: <%= event.description %> </li>
+    <li>Address <br>
+    <%= event.street %>
+    <%= event.city %>
+    <%= event.state %>
+    </li>
+    <li>Date: <%= event.date %> </li>
+    <li>Time: <%= event.time %> </li>
+    <% end %>
+  <% else %>
+    No past events!
+  <% end %>

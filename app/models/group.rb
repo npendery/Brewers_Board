@@ -9,4 +9,24 @@ class Group < ActiveRecord::Base
   validates :name, presence: true
   validates :location, presence: true
   validates :description, presence: true
+
+  # def upcoming_events
+  #   list = []
+  #   self.each do |event|
+  #     if event.date >= Date.today
+  #       list << event
+  #     end
+  #   end
+  #   list
+  # end
+  #
+  # def past_events
+  #   list = []
+  #   self.each do |event|
+  #     if event.date < Date.today
+  #       list << event
+  #     end
+  #   end
+  #   list
+  # end
 end

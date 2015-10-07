@@ -18,7 +18,7 @@ class EventsController < ApplicationController
     @event.group = @group
     @event.user = current_user
     if @event.save
-      flash[:accepted] = "Message added"
+      flash[:accepted] = "Event added"
       redirect_to group_path(@group)
     else
       flash[:errors] = @event.errors.full_messages.join(". ")
@@ -35,7 +35,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @group = @event.group
     if @event.update(event_params)
-      flash[:notice] = 'Message updated'
+      flash[:notice] = 'Event updated'
       redirect_to group_path(@group)
     else
       flash[:notice] = @event.errors.full_messages.join(". ")
@@ -48,7 +48,7 @@ class EventsController < ApplicationController
     @group = @event.group
     @event.destroy
 
-    flash[:notice] = "Message deleted"
+    flash[:notice] = "Event deleted"
     redirect_to group_path(@group)
   end
 
@@ -62,7 +62,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    list = [:title, :description, :street, :city, :state]
+    list = [:title, :description, :street, :city, :state, :date, :time]
     params.require(:event).permit(list)
   end
 end
