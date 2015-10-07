@@ -17,9 +17,27 @@
   <% end %>
 </div>
 
+<% if @group.users.include?(current_user) %>
+  <%= link_to "Message group", new_group_group_message_path(@group) %>
+  <% if @group.group_messages.present? %>
+    <h4>Messages</h4>
+    <% @group.group_messages.each do |message| %>
+      <li>From: <%= message.user.username %></li>
+      <li><%= message.body %></li>
+      <li>
+      <% if message.user == current_user || current_user.admin %>
+        <%= link_to "Edit", edit_group_message_path(message) %> or
+        <%= link_to "Delete", group_message_path(message), method: :delete %> message
+      <% end %>
+      </li>
+    <% end %>
+  <% end %>
+<% end %>
+
 <% if @group.owner == current_user || current_user.admin %>
-  <%= link_to "Edit group", edit_group_path(@group) %>
-  <%= link_to "Delete group", group_path(@group), method: :delete %>
+  <span><%= link_to "Edit", edit_group_path(@group) %> or
+  <%= link_to "Delete", group_path(@group), method: :delete %> Group
+  </span>
 <% end %>
 
 <% if @group.owner != current_user %>
