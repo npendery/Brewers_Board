@@ -12,7 +12,10 @@ Rails.application.routes.draw do
 
   resources :groups do
     resources :group_messages
+    resources :events
   end
+
+  resources :events
 
   resources :group_messages
 

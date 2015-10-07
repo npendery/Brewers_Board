@@ -26,6 +26,9 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @current_member = current_member
+    @events = @group.events
+    # @upcoming_events = @events.upcoming_events
+    # @past_events = @events.past_events
   end
 
   def edit
