@@ -21,7 +21,7 @@ class GroupMessagesController < ApplicationController
       flash[:accepted] = "Message added"
       redirect_to group_path(@group)
     else
-      flash[:errors] = "Message " + @group_message.errors.full_messages.join(". ")
+      flash[:errors] = "Message Body can't be blank"
       render :new
     end
   end
