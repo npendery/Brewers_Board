@@ -38,6 +38,7 @@
   <span><%= link_to "Edit", edit_group_path(@group) %> or
   <%= link_to "Delete", group_path(@group), method: :delete %> Group
   </span>
+  <%= link_to "Add Event", new_group_event_path(@group) %>
 <% end %>
 
 <% if @group.owner != current_user %>

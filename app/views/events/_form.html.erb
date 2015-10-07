@@ -1,0 +1,17 @@
+<%= form_for [@group, @event] do |f| %>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+	<%= f.label :description %>
+	<%= f.text_area :description %>
+	<%= f.label :street %>
+	<%= f.text_field :street %>
+	<%= f.label :city %>
+	<%= f.text_field :city %>
+	<%= f.label :state %>
+	<%= f.collection_select :state, Event::STATES, :to_s, :to_s %>
+	<%= f.label :date %>
+	<%= f.date_select :date, start_date: Date.today, order: [:day, :month, :year] %>
+	<%= f.label :time %>
+	<%= f.time_select :time, start_time: Time.now, minute_step: 30, ampm: true %>
+	<%= f.submit(((params[:action] == 'new') ? 'Create' : 'Update') + ' event') %>
+<% end %>
