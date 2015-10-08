@@ -12,6 +12,10 @@ class Event < ActiveRecord::Base
   validates :date, presence: true
   validates :time, presence: true
 
+  def self.search(search)
+    where('title ILIKE ?', "%#{search}%")
+  end
+
   STATES = ["AL",
             "AK",
             "AZ",

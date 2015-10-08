@@ -33,4 +33,16 @@ FactoryGirl.define do
     location "Everywhere"
     owner FactoryGirl.create(:user)
   end
+
+  factory :event do
+    sequence(:title) { |n| "title#{n}" }
+    description "New Event"
+    street "1234 Tremont St"
+    city "Cambridge"
+    state "MA"
+    date "10/12/15"
+    time "2:00pm"
+    user FactoryGirl.create(:user)
+    group FactoryGirl.create(:group)
+  end
 end

@@ -7,5 +7,9 @@ class Review < ActiveRecord::Base
   validates :title, presence: true
   validates :rating, presence: true
 
+  def self.search(search)
+    where('title ILIKE ?', "%#{search}%")
+  end
+
   RATINGS = [1, 2, 3, 4, 5]
 end
