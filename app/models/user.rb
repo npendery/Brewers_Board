@@ -14,4 +14,8 @@ class User < ActiveRecord::Base
   validates :username, presence: true
   validates :city, presence: true
   validates :admin, inclusion: { in: [true, false] }
+
+  def self.search(search)
+    where('username ILIKE ?', "%#{search}%")
+  end
 end

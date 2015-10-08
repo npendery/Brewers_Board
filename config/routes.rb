@@ -20,4 +20,6 @@ Rails.application.routes.draw do
   resources :group_messages
 
   resources :memberships, only: [:create, :destroy]
+
+  resources :searches, only: [:index]
 end

@@ -1,0 +1,59 @@
+<div class="text-center category-header">
+  <h4> Search Results </h4>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="field columns small-3">
+      <ul>
+        <% if params[:search].empty? ||
+          @search_results_recipe.empty? && @search_results_review.empty? &&
+          @search_results_group.empty? && @search_results_user.empty? &&
+          @search_results_event.empty? %>
+          <p>No Results</p>
+        <% else %>
+          <li>Showing Results for <div class="blue-text"><%= params[:search]%></div></li>
+          <% if @search_results_recipe.present? %>
+            <p>Recipe Results</p>
+            <% @search_results_recipe.each do |result| %>
+              <li><%= link_to result.name, recipe_path(result) %></li>
+            <% end %>
+          <HR WIDTH="90%">
+          <% end %>
+
+          <% if @search_results_review.present? %>
+            <p>Review Results</p>
+            <% @search_results_review.each do |result| %>
+                <li><%= link_to result.recipe.name, recipe_path(result.recipe) %></li>
+            <% end %>
+            <HR WIDTH="90%">
+          <% end %>
+
+          <% if @search_results_group.present? %>
+            <p>Group Results</p>
+            <% @search_results_group.each do |result| %>
+              <li><%= link_to result.name, group_path(result) %></li>
+            <% end %>
+          <HR WIDTH="90%">
+          <% end %>
+
+          <% if @search_results_user.present? %>
+            <p>User Results</p>
+            <% @search_results_user.each do |result| %>
+              <li><%= link_to result.username, user_path(result) %></li>
+            <% end %>
+          <HR WIDTH="90%">
+          <% end %>
+
+          <% if @search_results_event.present? %>
+            <p>Event Results</p>
+            <% @search_results_event.each do |result| %>
+              <li><%= link_to result.title, event_path(result) %></li>
+            <% end %>
+          <HR WIDTH="90%">
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <br>
+</div>

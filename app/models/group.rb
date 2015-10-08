@@ -11,6 +11,11 @@ class Group < ActiveRecord::Base
   validates :location, presence: true
   validates :description, presence: true
 
+  def self.search(search)
+    where('name ILIKE ?', "%#{search}%") |
+      where('location ILIKE ?', "%#{search}%") |
+      where('description ILIKE ?', "%#{search}%")
+  end
   # def upcoming_events
   #   list = []
   #   self.each do |event|
