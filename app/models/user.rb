@@ -16,6 +16,6 @@ class User < ActiveRecord::Base
   validates :admin, inclusion: { in: [true, false] }
 
   def self.search(search)
-  where('username ILIKE ?', "%#{search}%")
+    where('username ILIKE ?', "%#{search}%")
   end
 end
