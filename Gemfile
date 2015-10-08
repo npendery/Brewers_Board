@@ -15,6 +15,9 @@ gem 'kaminari'
 gem 'carrierwave'
 gem 'fog'
 gem 'best_in_place', '~> 3.0.1'
+gem 'websocket-rails'
+gem "private_pub"
+gem "thin"
 
 group :test do
   gem 'coveralls', require: false
