@@ -13,5 +13,24 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
-
+ *= require foundation
  */
+
+$white: #ffffff;
+$black: #000000;
+$red: #ff0000;
+$search-result: #008cba;
+
+.hidden-button {
+ display: none;
+}
+
+div .search-bar-only {
+background-color: rgba(60, 59, 59, 0.3);
+border-color: $white;
+-moz-border-radius: 15px;
+-webkit-border-radius: 15px;
+border-radius: 15px;
+color: $black;
+width: 200px;
+}

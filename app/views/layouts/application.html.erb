@@ -4,6 +4,7 @@
   <title>BrewersBoard</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
 
@@ -15,7 +16,7 @@
     </ul>
 
     <section class="top-bar-section">
-      <ul class="right">
+      <ul id="drop" class="right [tiny small medium large content]f-dropdown" data-dropdown-content>
         <li class="has-form">
           <div class="row collapse">
             <%= render "layouts/search" %>
