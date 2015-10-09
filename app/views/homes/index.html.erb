@@ -1,8 +1,10 @@
 <p>
-<%= link_to "View all user recipes", recipes_path %>
+<%= link_to "View Recipes", recipes_path %>
 </p>
 <p>
-<%= link_to "View all users", users_path %>
+  <% if current_user != nil %>
+    <%= link_to "View Users", users_path %>
+  <% end %>
 </p>
 <p>
 <%= link_to "View Brewing Groups", groups_path %>

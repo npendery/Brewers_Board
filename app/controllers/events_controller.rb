@@ -18,7 +18,7 @@ class EventsController < ApplicationController
     @event.group = @group
     @event.user = current_user
     if @event.save
-      flash[:accepted] = "Event added"
+      flash[:success] = "Event added!"
       redirect_to group_path(@group)
     else
       flash[:errors] = @event.errors.full_messages.join(". ")

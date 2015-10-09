@@ -33,7 +33,7 @@ feature 'admin visits users index', %{
     expect(page).to_not have_content("Change admin status")
   end
 
-  pending scenario 'admin deletes user' do
+  scenario 'admin deletes user' do
     user1 = FactoryGirl.create(:user)
     user2 = FactoryGirl.create(:user, admin: true)
 
@@ -43,7 +43,7 @@ feature 'admin visits users index', %{
     expect(page).to have_content(user1.username)
     expect(page).to have_content(user2.username)
 
-    target_text = ".member-list#{user1.id}"
+    target_text = ".member#{user1.id}"
     within (target_text) do
       click_link "Delete user"
     end
@@ -52,7 +52,7 @@ feature 'admin visits users index', %{
     expect(page).to have_content(user2.username)
   end
 
-  pending scenario 'admin makes another user an admin' do
+  scenario 'admin makes another user an admin' do
     user1 = FactoryGirl.create(:user)
     user2 = FactoryGirl.create(:user, admin: true)
 
@@ -62,12 +62,11 @@ feature 'admin visits users index', %{
     expect(page).to have_content(user1.username)
     expect(page).to have_content(user2.username)
 
-    within (".member-list") do
-      click_link "Make Admin"
+    target_text = ".member#{user1.id}"
+    within (target_text) do
+      click_link "Change admin status"
     end
 
-    within (".admin-list") do
-      expect(page).to have_content(user1.username)
-    end
+    expect(find(target_text)).to have_content("Admin: true")
   end
 end

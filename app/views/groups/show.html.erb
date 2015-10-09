@@ -17,48 +17,51 @@
   <% end %>
 </div>
 
-<% if @group.users.include?(current_user) %>
-  <%= link_to "Message group", new_group_group_message_path(@group) %>
-  <% if @group.group_messages.present? %>
-    <h4>Messages</h4>
-    <% @group.group_messages.each do |message| %>
-      <li>From: <%= message.user.username %></li>
-      <li><%= message.body %></li>
-      <li>
-      <% if message.user == current_user || current_user.admin %>
-        <%= link_to "Edit", edit_group_message_path(message) %> or
-        <%= link_to "Delete", group_message_path(message), method: :delete %> message
+<%if current_user != nil %>
+  <% if @group.users.include?(current_user) || current_user == @group.owner %>
+    <%= link_to "Message group", new_group_group_message_path(@group) %>
+    <% if @group.group_messages.present? %>
+      <h4>Messages</h4>
+      <% @group.group_messages.each do |message| %>
+        <li>From: <%= message.user.username %></li>
+        <li><%= message.body %></li>
+        <li>
+        <% if message.user == current_user || current_user.admin %>
+          <%= link_to "Edit", edit_group_message_path(message) %> or
+          <%= link_to "Delete", group_message_path(message), method: :delete %> message
+        <% end %>
+        </li>
       <% end %>
-      </li>
     <% end %>
+
+  <div>
+    <h4>Events</h4>
+    <%= @events.each do |event| %>
+    <li>Title: <%= event.title %> </li>
+    <li>Description: <%= event.description %> </li>
+    <li>Address <br>
+    <%= event.street %><br>
+    <%= event.city %>, <%= event.state %><br>
+    </li>
+    <li>Date: <%= event.date %> </li>
+    <li>Time: <%= event.time %> </li>
+    <% end %>
+  </div>
   <% end %>
-<% end %>
 
-<div>
-  <%= @events.each do |event| %>
-  <li>Title: <%= event.title %> </li>
-  <li>Description: <%= event.description %> </li>
-  <li>Address <br>
-  <%= event.street %><br>
-  <%= event.city %>, <%= event.state %><br>
-  </li>
-  <li>Date: <%= event.date %> </li>
-  <li>Time: <%= event.time %> </li>
+  <% if @group.owner == current_user || current_user.admin %>
+    <span><%= link_to "Edit", edit_group_path(@group) %> or
+    <%= link_to "Delete", group_path(@group), method: :delete %> Group
+    </span>
+    <%= link_to "Add Event", new_group_event_path(@group) %>
   <% end %>
-</div>
 
-<% if @group.owner == current_user || current_user.admin %>
-  <span><%= link_to "Edit", edit_group_path(@group) %> or
-  <%= link_to "Delete", group_path(@group), method: :delete %> Group
-  </span>
-  <%= link_to "Add Event", new_group_event_path(@group) %>
-<% end %>
-
-<% if @group.owner != current_user %>
-  <% if @group.users.include?(current_user) %>
-    <%= link_to "Leave Group", membership_path(id: @current_member), method: :delete %>
-  <% else %>
-    <%= link_to "Join Group", memberships_path(group_id: @group.id), method: :post %>
+  <% if @group.owner != current_user %>
+    <% if @group.users.include?(current_user) %>
+      <%= link_to "Leave Group", membership_path(id: @current_member), method: :delete %>
+    <% else %>
+      <%= link_to "Join Group", memberships_path(group_id: @group.id), method: :post %>
+    <% end %>
   <% end %>
 <% end %>
 

@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
     @review.recipe = @recipe
     @review.user = current_user
     if @review.save
-      flash[:accepted] = "Review added."
+      flash[:success] = "Review added!"
       redirect_to recipe_path(@recipe)
     else
       flash[:errors] = @review.errors.full_messages.join(". ")
