@@ -5,5 +5,5 @@
 	<%= f.collection_radio_buttons :rating, Review::RATINGS, :to_i, :to_i %>
 	<%= f.label :description %>
 	<%= f.text_field :description %>
-	<%= f.submit(((params[:action] == 'new') ? 'Create' : 'Update') + ' review') %>
+	<%= f.submit(((params[:action] == 'new') ? 'Create' : 'Update') + ' review'), class: "submit-form" %>
 <% end %>

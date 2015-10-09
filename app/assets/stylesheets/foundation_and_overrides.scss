@@ -124,7 +124,7 @@ $warning-color: #f08a24;
 $info-color: #a0d3e8;
 
 // We use these to control various global styles
-// $body-bg: $white;
+$body-bg: $aluminum;
 $body-font-color: $jet;
 $body-font-family: $font-family-sans-serif;
 $body-font-weight: $font-weight-normal;
@@ -1167,7 +1167,7 @@ $side-nav-padding: rem-calc(14 0);
 // We use these to control list styles.
 $side-nav-list-type: none;
 $side-nav-list-position: outside;
-$side-nav-list-margin: rem-calc(0 0 7 0);
+$side-nav-list-margin: rem-calc(0 0 4 0);
 
 // We use these to control link styles.
 $side-nav-link-color: $primary-color;
@@ -1191,7 +1191,7 @@ $side-nav-heading-text-transform: uppercase;
 // We use these to control border styles
 $side-nav-divider-size: 1px;
 $side-nav-divider-style: solid;
-$side-nav-divider-color: scale-color($white, $lightness: 10%);
+$side-nav-divider-color: scale-color($black, $lightness: 10%);
 
 // 27. Split Buttons
 // - - - - - - - - - - - - - - - - - - - - - - - - -

@@ -23,5 +23,5 @@
 	<%= f.text_field :yeast %>
 	<br>
 	<br>
-	<%= f.submit(((params[:action] == 'new') ? 'Create' : 'Update') + ' recipe') %>
+	<%= f.submit(((params[:action] == 'new') ? 'Create' : 'Update') + ' recipe'), class: "submit-form" %>
 <% end %>
