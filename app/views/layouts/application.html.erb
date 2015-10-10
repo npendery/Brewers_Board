@@ -3,8 +3,16 @@
 <head>
   <title>BrewersBoard</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag "vendor/modernizr" %>
   <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
 </head>
 <body>
 
@@ -16,11 +24,9 @@
     </ul>
 
     <section class="top-bar-section">
-      <ul id="drop" class="right [tiny small medium large content]f-dropdown" data-dropdown-content>
+      <ul id="drop" class="top-bar right [tiny small medium large content]f-dropdown" data-dropdown-content>
         <li class="has-form">
-          <div class="row collapse">
             <%= render "layouts/search" %>
-          </div>
         </li>
         <%- if current_user -%>
           <li><%= link_to 'Create Recipe', new_recipe_path %></li>
@@ -34,16 +40,24 @@
       </ul>
     </section>
   </nav>
+      <% flash.each do |name, msg| %>
+        <% if msg.is_a?(String) %>
+          <%= content_tag :div, msg, class: "alert-box #{name} radius" %>
+        <% end %>
+      <% end %>
+  <div class="row">
+    <div class="small-centered large-centered text-center">
+      <div class="main-area large-12 medium-11 small-10 columns">
+      <%= yield %>
 
-  <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
+      <%= javascript_include_tag 'application' %>
+      <%= yield :extra_footer %>
+      </div>
     </div>
-  <%- end -%>
-
-  <%= yield %>
-
-  <%= javascript_include_tag 'application' %>
-  <%= yield :extra_footer %>
+  </div>
+  <div id='footer'>
+  </div>
+  <audio id="chatAudio"><source src="/sounds/notification.mp3" type="audio/mpeg"></audio>
+  <%= javascript_include_tag "application" %>
 </body>
 </html>

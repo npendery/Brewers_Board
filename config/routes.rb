@@ -22,4 +22,8 @@ Rails.application.routes.draw do
   resources :memberships, only: [:create, :destroy]
 
   resources :searches, only: [:index]
+
+  resources :conversations do
+    resources :messages
+  end
 end

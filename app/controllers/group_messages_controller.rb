@@ -18,7 +18,7 @@ class GroupMessagesController < ApplicationController
     @group_message.group = @group
     @group_message.user = current_user
     if @group_message.save
-      flash[:accepted] = "Message added"
+      flash[:success] = "Message added!"
       redirect_to group_path(@group)
     else
       flash[:errors] = "Message Body can't be blank"

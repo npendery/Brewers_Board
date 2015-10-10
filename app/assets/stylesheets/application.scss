@@ -10,10 +10,9 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require foundation_and_overrides
  *= require_tree .
  *= require_self
- *= require foundation_and_overrides
- *= require foundation
  */
 
 $white: #ffffff;
@@ -21,16 +20,121 @@ $black: #000000;
 $red: #ff0000;
 $search-result: #008cba;
 
+body {
+  background-attachment: fixed;
+  background-image: image-url("bb_background_small.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.top-bar {
+  // background-color: rgba(244, 162, 23, 0.66);
+}
+
+.right {
+  background-color: rgba(244, 162, 23, 0.66);
+  position: relative;
+  right: 0;
+}
+
 .hidden-button {
  display: none;
 }
 
-div .search-bar-only {
-background-color: rgba(60, 59, 59, 0.3);
-border-color: $white;
--moz-border-radius: 15px;
--webkit-border-radius: 15px;
-border-radius: 15px;
-color: $black;
-width: 200px;
+.home-link {
+  color: rgb(255, 255, 255);
 }
+
+.main-area {
+  background: rgba(108, 108, 108, 0.5);
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  margin: 30px;
+  margin-top: 60px;
+  padding: 50px;
+}
+
+div .search-bar-only {
+  background-color: rgba(244, 162, 23, 0.66);
+  border-color: $white;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  color: $black;
+  width: 200px;
+}
+
+h4 {
+  background: rgba(65, 92, 108, 0.5);
+  color: $white;
+  font: bold 24px/45px Helvetica, Sans-Serif;
+  font-variant: small-caps;
+  letter-spacing: 6px;
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin-left: 4px;
+}
+
+.container {
+  border: 30px;
+  margin-top: 20px;
+
+  h1 {
+    background: rgba(0, 0, 0, 0.6);
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    color: $white;
+    font: bold 24px/45px Helvetica, Sans-Serif;
+    font-variant: small-caps;
+    padding: 0;
+    text-align: center;
+    width: 250px;
+  }
+
+  .text-field {
+    height: 25px;
+    margin-bottom: 1px;
+    padding: 5px;
+  }
+
+  .error-explanation {
+    color: $red;
+    font-size: 10px;
+    font-style: italic;
+    padding-bottom: 15px;
+  }
+
+  select {
+    height: 25px;
+    padding: 5px;
+  }
+
+  .submit-form {
+    background: rgba(0, 0, 0, 0.6);
+    color: $white;
+    font: bold 12px/24px Helvetica, Sans-Serif;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    padding: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+// #footer{
+//     height: 50px;
+//     position: fixed;
+//     bottom: 0px;
+//     left: 0px;
+//     line-height: 50px;
+//     color: #aaa;
+//     text-align: center;
+//     width: 100%;
+//     background-color: $black;
+// }

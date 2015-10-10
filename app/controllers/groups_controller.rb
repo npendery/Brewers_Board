@@ -15,7 +15,7 @@ class GroupsController < ApplicationController
     @group.owner = current_user
 
     if @group.save
-      flash[:accepted] = "Group added."
+      flash[:success] = "Group added!"
       redirect_to group_path(@group)
     else
       flash[:errors] = @group.errors.full_messages.join(". ")
@@ -27,6 +27,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @current_member = current_member
     @events = @group.events
+    # binding.pry
     # @upcoming_events = @events.upcoming_events
     # @past_events = @events.past_events
   end
@@ -40,7 +41,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
 
     if @group.update(group_params)
-      flash[:accepted] = "Group updated."
+      flash[:success] = "Group updated."
       redirect_to group_path(@group)
     else
       flash[:errors] = @group.errors.full_messages.join(". ")
@@ -51,7 +52,7 @@ class GroupsController < ApplicationController
   def destroy
     @group = Group.find(params[:id])
     @group.destroy
-    flash[:accepted] = "Group deleted."
+    flash[:success] = "Group deleted."
     redirect_to groups_path
   end
 

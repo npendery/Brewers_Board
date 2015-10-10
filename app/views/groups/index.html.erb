@@ -1,25 +1,19 @@
-<h1>Groups Index</h1>
+<div class="title">Brewing Groups</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @groups.each do |group| %>
-      <tr>
-        <td><%= link_to group.name, group_path(group) %></td>
-        <td><%= group.description %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<div class="row">
+  <% @groups.each do |group| %>
+  <div class="medium-12 large-12 columns">
+    <article class="group text-center">
+      <%= link_to group.name, group_path(group), class: "group-title" %>
+      <div class="group-description">
+        <%= group.description %>
+      </div>
+    </article>
+  </div>
+ <% end %>
+</div>
 <br>
 
-<div>
+<div class="row back-link">
 <%= link_to "Back to home", root_path %>
 </div>

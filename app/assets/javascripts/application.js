@@ -14,6 +14,16 @@
 //= require jquery_ujs
 //= require best_in_place
 //= require foundation
+//= require private_pub
+//= require chat
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+$(document).ready(function() {
+  setTimeout(function(){
+    $(".alert-box").fadeOut("slow", function() {
+      $(this).remove();
+    });
+  }, 3500);
+});

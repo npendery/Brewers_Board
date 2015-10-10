@@ -16,7 +16,7 @@ class RecipesController < ApplicationController
     @recipe.user = @user
 
     if @recipe.save
-      flash[:accepted] = "Recipe added."
+      flash[:success] = "Recipe added!"
       redirect_to recipe_path(@recipe)
     else
       flash[:errors] = @recipe.errors.full_messages.join(". ")
@@ -38,7 +38,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
 
     if @recipe.update(recipe_params)
-      flash[:accepted] = "Recipe updated."
+      flash[:notice] = "Recipe updated."
       redirect_to recipe_path(@recipe)
     else
       flash[:errors] = @recipe.errors.full_messages.join(". ")
@@ -49,7 +49,7 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
-    flash[:accepted] = "Recipe deleted."
+    flash[:notice] = "Recipe deleted."
     redirect_to recipes_path
   end
 

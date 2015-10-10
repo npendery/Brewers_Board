@@ -13,5 +13,5 @@
 	<%= f.date_field :date, min: Date.today %>
 	<%= f.label :time %>
 	<%= f.time_field :time %>
-	<%= f.submit(((params[:action] == 'new') ? 'Create' : 'Update') + ' event') %>
+	<%= f.submit(((params[:action] == 'new') ? 'Create' : 'Update') + ' event', class: "submit-form") %>
 <% end %>
