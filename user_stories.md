@@ -34,32 +34,7 @@
     I want to up vote an existing recipe
     So that other users can see it on the featured board
 
-* feature 'user adds article post'
-    As a signed up user
-    I want to submit an article
-    So that other users can see it in the articles section
-
-* feature 'user edits article post'
-    As a signed up user
-    I want to edit an article
-    So that other users can see it in the articles section
-
-* feature 'user deletes article post'
-    As a signed up user
-    I want to delete an article
-    So that other users cant see it in the articles section
-
-* feature 'user searches fro recipe'
+* feature 'user searches for recipe'
     As a signed up user
     I want to use the search bar
     So that I can see what is related to my search
-
-* feature 'user searches for brewery'
-    As a signed up user
-    I want to use the brewery search
-    So that I can see what breweries are near me
-
-* feature 'user gets directions to brewery'
-    As a signed up user
-    I want to get redirected to Google Maps
-    So that I can see how to get to my selected brewery

@@ -1,0 +1,48 @@
+$white: #ffffff;
+
+.title {
+  color: $white;
+  font-size: 60px;
+  font-size: 5vw;
+  font-weight: bold;
+}
+.groups {
+  text-align: center;
+}
+
+.group {
+  margin: 20px;
+  padding: 30px;
+  background-color: rgba(244, 162, 23, 0.66);
+  max-width: 1000px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+}
+
+.group-title {
+  font-size: 25px;
+  font-size: 2.8vw;
+  color: $white;
+  padding: 8px;
+  background-color: rgba(#144bd9, 0.6);
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+}
+
+.group-title:hover {
+  color: #144bd9;
+}
+
+.group-description {
+  margin-top: 15px;
+  font-size: 12px;
+  font-size: 1.8vw;
+}
+
+.back-link {
+  font-size: 8px;
+  font-size: .8vw;
+  color: $white;
+}

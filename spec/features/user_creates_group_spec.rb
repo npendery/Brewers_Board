@@ -22,7 +22,7 @@ feature 'user creates group', %{
 
     click_on "Create group"
 
-    expect(page).to have_content("Group added.")
+    expect(page).to have_content("Group added!")
     expect(page).to have_content("BrewingBoys")
     expect(page).to have_content("Created by: #{user.username}")
   end

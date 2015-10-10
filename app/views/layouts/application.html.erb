@@ -26,9 +26,7 @@
     <section class="top-bar-section">
       <ul id="drop" class="top-bar right [tiny small medium large content]f-dropdown" data-dropdown-content>
         <li class="has-form">
-          <div class="row collapse">
             <%= render "layouts/search" %>
-          </div>
         </li>
         <%- if current_user -%>
           <li><%= link_to 'Create Recipe', new_recipe_path %></li>
