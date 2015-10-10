@@ -24,7 +24,7 @@
     </ul>
 
     <section class="top-bar-section">
-      <ul id="drop" class="right [tiny small medium large content]f-dropdown" data-dropdown-content>
+      <ul id="drop" class="top-bar right [tiny small medium large content]f-dropdown" data-dropdown-content>
         <li class="has-form">
           <div class="row collapse">
             <%= render "layouts/search" %>
@@ -47,16 +47,13 @@
           <%= content_tag :div, msg, class: "alert-box #{name} radius" %>
         <% end %>
       <% end %>
-  <div class="container">
-    <div>
-      <div class="large-10 medium-10 small-12 columns">
+  <div class="row">
+    <div class="small-centered large-centered text-center">
+      <div class="main-area large-12 medium-11 small-10 columns">
       <%= yield %>
 
       <%= javascript_include_tag 'application' %>
       <%= yield :extra_footer %>
-      </div>
-      <div class="side-nav right large-2 medium-2 columns messenger">
-        <%= render 'layouts/message' %>
       </div>
     </div>
   </div>

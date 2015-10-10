@@ -1,11 +1,14 @@
-<p>
-<%= link_to "View Recipes", recipes_path %>
-</p>
-<p>
+<div class="small-12 medium-4 columns text-center">
+<%= link_to(image_tag("beer_icon.png", size: "200"), recipes_path)%><br>
+<%= link_to "VIEW RECIPES", recipes_path, class: "home-link" %>
+</div>
+<div class="small-12 medium-4 columns text-center">
   <% if current_user != nil %>
-    <%= link_to "View Users", users_path %>
+    <%= link_to(image_tag("user_icon.png", size: "200"), users_path)%><br>
+    <%= link_to "VIEW USERS", users_path, class: "home-link" %>
   <% end %>
-</p>
-<p>
-<%= link_to "View Brewing Groups", groups_path %>
-</p>
+</div>
+<div class="small-12 medium-4 columns text-center">
+  <%= link_to(image_tag("group_icon.png", size: "200"), groups_path)%><br>
+  <%= link_to "VIEW GROUPS", groups_path, class: "home-link" %>
+</div>
