@@ -35,7 +35,7 @@ body {
 .right {
   background-color: rgba(244, 162, 23, 0.66);
   position: relative;
-  right: 0px;
+  right: 0;
 }
 
 .hidden-button {
@@ -45,14 +45,15 @@ body {
 .home-link {
   color: rgb(255, 255, 255);
 }
+
 .main-area {
-  background:rgba(108, 108, 108, 0.5);
-  margin: 30px;
-  margin-top: 60px;
-  padding: 50px;
+  background: rgba(108, 108, 108, 0.5);
   -moz-border-radius: 30px;
   -webkit-border-radius: 30px;
   border-radius: 30px;
+  margin: 30px;
+  margin-top: 60px;
+  padding: 50px;
 }
 
 div .search-bar-only {
@@ -80,27 +81,27 @@ ul {
 }
 
 .container {
-  margin-top: 20px;
   border: 30px;
+  margin-top: 20px;
 
   h1 {
     background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
     color: $white;
     font: bold 24px/45px Helvetica, Sans-Serif;
     font-variant: small-caps;
     letter-spacing: 6px;
-    width: 250px;
-    text-align: center;
-    border-radius: 15px;
-    -moz-border-radius: 15px;
-    -webkit-border-radius: 15px;
     padding: 0;
+    text-align: center;
+    width: 250px;
   }
 
   .text-field {
-    padding: 5px;
     height: 25px;
     margin-bottom: 1px;
+    padding: 5px;
   }
 
   .error-explanation {
