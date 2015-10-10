@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or create!d alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create!([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create!(name: 'Emanuel', city: cities.first)
-
 User.create!(username: "ddiggler", city: "Somerville, MA",
              email: "ddiggler@gmail.com", password: 12345678,
              password_confirmation: 12345678, admin: false)
@@ -75,13 +67,15 @@ g3 = Group.create!(name: "E.A.Poe Brewers",
                    location: "Baltimore, MD", owner: user3)
 
 g4 = Group.create!(name: "Nations Finest",
-                   description: "Homebrewing in the nation's capital at its finest!",
+                   description: "Homebrewing in the nation's capital at its
+                                 finest!",
                    location: "Washington, DC", owner: user4)
 
-g5 = Group.create!(name: "Lager Lovers",
-                   description: "We love lagers and so should you!\n
-                   We only brew delicious lagers because they are worth the two month wait!",
-                   location: "Washington, DC", owner: user5)
+Group.create!(name: "Lager Lovers",
+              description: "We love lagers and so should you!\n
+                            We only brew delicious lagers because they are
+                            worth the two month wait!",
+              location: "Washington, DC", owner: user5)
 
 Event.create!(title: "Brewing this weekend!",
               description: "Making a Pale Ale at Bill's house",
@@ -95,7 +89,8 @@ Event.create!(title: "Trying our latest batch",
               user: user2, group: g2)
 
 Event.create!(title: "Trying the Pumpkin Ale!",
-              description: "Popping open our pumpkin ale just in time for Halloween!",
+              description: "Popping open our pumpkin ale just in time
+                            for Halloween!",
               street: "1234 Mass Ave", city: "Cambrdige",
               state: "MA", date: "2015/10/28",
               time: "9:00pm", user: user1, group: g1)

@@ -6,18 +6,19 @@ $white: #ffffff;
   font-size: 5vw;
   font-weight: bold;
 }
+
 .groups {
   text-align: center;
 }
 
 .group {
-  margin: 20px;
-  padding: 30px;
   background-color: rgba(244, 162, 23, 0.66);
-  max-width: 1000px;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
   border-radius: 15px;
+  margin: 20px;
+  max-width: 1000px;
+  padding: 30px;
 }
 
 .group-title {
@@ -44,5 +45,5 @@ $white: #ffffff;
 .back-link {
   color: $white;
   font-size: 8px;
-  font-size: .8vw;
+  font-size: 0.8vw;
 }
