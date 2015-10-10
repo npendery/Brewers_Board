@@ -57,13 +57,13 @@ body {
 }
 
 div .search-bar-only {
-background-color: rgba(244, 162, 23, 0.66);
-border-color: $white;
--moz-border-radius: 15px;
--webkit-border-radius: 15px;
-border-radius: 15px;
-color: $black;
-width: 200px;
+  background-color: rgba(244, 162, 23, 0.66);
+  border-color: $white;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  color: $black;
+  width: 200px;
 }
 
 h4 {
@@ -92,7 +92,6 @@ ul {
     color: $white;
     font: bold 24px/45px Helvetica, Sans-Serif;
     font-variant: small-caps;
-    letter-spacing: 6px;
     padding: 0;
     text-align: center;
     width: 250px;
