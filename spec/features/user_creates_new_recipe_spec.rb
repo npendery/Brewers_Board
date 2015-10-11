@@ -17,15 +17,15 @@ feature 'user creates recipe', %{
     click_on 'Create Recipe'
 
     fill_in "Name", with: "HopperHead"
+    select "India Pale Ale", from: "Style"
     fill_in "Description", with: "Hoppy and dense"
-    fill_in "Malt/Grains", with: "List \n of \n ingredients"
-    fill_in "Hops Schedule", with: "First \n Second \n Third"
-    fill_in "Directions", with: "You do this"
-    fill_in "Yeast", with: "Yeast selection"
+    fill_in "Ingredients", with: "List \n of \n ingredients"
+    fill_in "Instructions", with: "First \n Second \n Third"
+    fill_in "Yield", with: "5 gallons"
 
     click_on "Create recipe"
 
-    expect(page).to have_content("Recipe added.")
+    expect(page).to have_content("Recipe added!")
     expect(page).to have_content("HopperHead")
   end
 
@@ -37,11 +37,11 @@ feature 'user creates recipe', %{
     click_on 'Create Recipe'
 
     fill_in "Name", with: ""
+    select "India Pale Ale", from: "Style"
     fill_in "Description", with: "Hoppy and dense"
-    fill_in "Malt/Grains", with: "List \n of \n ingredients"
-    fill_in "Hops Schedule", with: "First \n Second \n Third"
-    fill_in "Directions", with: "You do this"
-    fill_in "Yeast", with: "Yeast selection"
+    fill_in "Ingredients", with: "List \n of \n ingredients"
+    fill_in "Instructions", with: "First \n Second \n Third"
+    fill_in "Yield", with: "5 gallons"
 
     click_on "Create recipe"
 
@@ -56,18 +56,18 @@ feature 'user creates recipe', %{
     click_on 'Create Recipe'
 
     fill_in "Name", with: "HopperHead"
+    select "India Pale Ale", from: "Style"
     fill_in "Description", with: ""
-    fill_in "Malt/Grains", with: "List \n of \n ingredients"
-    fill_in "Hops Schedule", with: "First \n Second \n Third"
-    fill_in "Directions", with: "You do this"
-    fill_in "Yeast", with: "Yeast selection"
+    fill_in "Ingredients", with: "List \n of \n ingredients"
+    fill_in "Instructions", with: "First \n Second \n Third"
+    fill_in "Yield", with: "5 gallons"
 
     click_on "Create recipe"
 
     expect(page).to have_content("Description can't be blank")
   end
 
-  scenario 'create unsucccessful recipe, without Malt/Grains' do
+  scenario 'create unsucccessful recipe, without Ingredients' do
     user = FactoryGirl.create(:user)
 
     sign_in(user)
@@ -75,18 +75,18 @@ feature 'user creates recipe', %{
     click_on 'Create Recipe'
 
     fill_in "Name", with: "HopperHead"
+    select "India Pale Ale", from: "Style"
     fill_in "Description", with: "Hoppy and dense"
-    fill_in "Malt/Grains", with: ""
-    fill_in "Hops Schedule", with: "First \n Second \n Third"
-    fill_in "Directions", with: "You do this"
-    fill_in "Yeast", with: "Yeast selection"
+    fill_in "Ingredients", with: ""
+    fill_in "Instructions", with: "First \n Second \n Third"
+    fill_in "Yield", with: "5 gallons"
 
     click_on "Create recipe"
 
-    expect(page).to have_content("Malt grains can't be blank")
+    expect(page).to have_content("Ingredients can't be blank")
   end
 
-  scenario 'create unsucccessful recipe, without Hops Schedule' do
+  scenario 'create unsucccessful recipe, without Instructions' do
     user = FactoryGirl.create(:user)
 
     sign_in(user)
@@ -94,18 +94,18 @@ feature 'user creates recipe', %{
     click_on 'Create Recipe'
 
     fill_in "Name", with: "HopperHead"
+    select "India Pale Ale", from: "Style"
     fill_in "Description", with: "Hoppy and dense"
-    fill_in "Malt/Grains", with: "List \n of \n ingredients"
-    fill_in "Hops Schedule", with: ""
-    fill_in "Directions", with: "You do this"
-    fill_in "Yeast", with: "Yeast selection"
+    fill_in "Ingredients", with: "List \n of \n ingredients"
+    fill_in "Instructions", with: ""
+    fill_in "Yield", with: "5 gallons"
 
     click_on "Create recipe"
 
-    expect(page).to have_content("Hops schedule can't be blank")
+    expect(page).to have_content("Instructions can't be blank")
   end
 
-  scenario 'create unsucccessful recipe, without Directions' do
+  scenario 'create unsucccessful recipe, without Yield' do
     user = FactoryGirl.create(:user)
 
     sign_in(user)
@@ -113,18 +113,18 @@ feature 'user creates recipe', %{
     click_on 'Create Recipe'
 
     fill_in "Name", with: "HopperHead"
+    select "India Pale Ale", from: "Style"
     fill_in "Description", with: "Hoppy and dense"
-    fill_in "Malt/Grains", with: "List \n of \n ingredients"
-    fill_in "Hops Schedule", with: "First \n Second \n Third"
-    fill_in "Directions", with: ""
-    fill_in "Yeast", with: "Yeast selection"
+    fill_in "Ingredients", with: "List \n of \n ingredients"
+    fill_in "Instructions", with: "First \n Second \n Third"
+    fill_in "Yield", with: ""
 
     click_on "Create recipe"
 
-    expect(page).to have_content("Directions can't be blank")
+    expect(page).to have_content("Yielder can't be blank")
   end
 
-  scenario 'create unsucccessful recipe, without Yeast' do
+  scenario 'create unsucccessful recipe, without Style' do
     user = FactoryGirl.create(:user)
 
     sign_in(user)
@@ -133,13 +133,12 @@ feature 'user creates recipe', %{
 
     fill_in "Name", with: "HopperHead"
     fill_in "Description", with: "Hoppy and dense"
-    fill_in "Malt/Grains", with: "List \n of \n ingredients"
-    fill_in "Hops Schedule", with: "First \n Second \n Third"
-    fill_in "Directions", with: "You do this"
-    fill_in "Yeast", with: ""
+    fill_in "Ingredients", with: "List \n of \n ingredients"
+    fill_in "Instructions", with: "First \n Second \n Third"
+    fill_in "Yield", with: "5 gallons"
 
     click_on "Create recipe"
 
-    expect(page).to have_content("Yeast can't be blank")
+    expect(page).to have_content("Style can't be blank")
   end
 end

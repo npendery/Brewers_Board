@@ -15,7 +15,7 @@ feature 'user joins group', %{
 
     sign_in(user1)
 
-    click_on 'View Brewing Groups'
+    click_on 'VIEW GROUPS'
 
     click_on group.name
 

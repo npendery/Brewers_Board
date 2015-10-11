@@ -5,10 +5,10 @@ class Recipe < ActiveRecord::Base
   validates :name, presence: true
   validates :name, uniqueness: true
   validates :description, presence: true
-  validates :malt_grains, presence: true
-  validates :hops_schedule, presence: true
-  validates :directions, presence: true
-  validates :yeast, presence: true
+  validates :style, presence: true
+  validates :ingredients, presence: true
+  validates :instructions, presence: true
+  validates :yielder, presence: true
   validates :user, presence: true
 
   def self.search(search)
@@ -27,4 +27,31 @@ class Recipe < ActiveRecord::Base
       score / reviews.count
     end
   end
+
+  STYLES = ["Light Lager",
+            "Pilsner",
+            "Europeans Amber Lager",
+            "Dark Lager",
+            "Bock",
+            "Light Hybrid Beer",
+            "Amber Hybrid Beer",
+            "English Pale Ale",
+            "Scottish and Irish Ale",
+            "American Ale",
+            "English Brown Ale",
+            "Porter",
+            "Stout",
+            "India Pale Ale",
+            "German Wheat and Rye Beer",
+            "Belgian and French Ale",
+            "Sour Ale",
+            "Belgian Strong Ale",
+            "Strong Ale",
+            "Fruit Beer",
+            "Spice/Herb/Vegetable Beer",
+            "Smoke-Flavored/Wood-Aged Beer",
+            "Specialty Beer",
+            "Cider",
+            "Mead"
+           ]
 end

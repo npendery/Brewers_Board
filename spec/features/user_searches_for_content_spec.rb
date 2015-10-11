@@ -54,7 +54,7 @@ feature 'user searches for content', %{
 
     sign_in(user)
 
-    click_on 'View Brewing Groups'
+    click_on 'VIEW GROUPS'
 
     click_on group.name
 

@@ -17,7 +17,7 @@ feature 'user reviews a recipe', %{
 
     visit '/'
 
-    click_on "View all user recipes"
+    click_on "VIEW RECIPES"
 
     click_on recipe1.name
 
@@ -25,11 +25,12 @@ feature 'user reviews a recipe', %{
 
     fill_in "review[title]", with: "Love the malt character"
     fill_in "Description", with: "Would add more 30 minute hops for bitterness"
-    choose 4
+
+    choose "review_rating_4"
 
     click_on "Create review"
 
-    expect(page).to have_content("Review added.")
+    expect(page).to have_content("Review added!")
     expect(page).to have_content(recipe1.name)
   end
 
@@ -40,7 +41,7 @@ feature 'user reviews a recipe', %{
 
     visit '/'
 
-    click_on "View all user recipes"
+    click_on "VIEW RECIPES"
 
     click_on recipe1.name
 
@@ -59,7 +60,7 @@ feature 'user reviews a recipe', %{
 
     visit '/'
 
-    click_on "View all user recipes"
+    click_on "VIEW RECIPES"
 
     click_on recipe1.name
 
@@ -67,11 +68,11 @@ feature 'user reviews a recipe', %{
 
     fill_in "Title", with: "Love the malt character"
     fill_in "Description", with: "Would add more 30 minute hops for bitterness"
-    choose 4
+    choose "review_rating_4"
 
     click_on "Create review"
 
-    expect(page).to have_content("Review added.")
+    expect(page).to have_content("Review added!")
     expect(page).to have_content(recipe1.name)
     expect(page).to_not have_content("Review recipe")
   end

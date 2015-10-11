@@ -17,7 +17,7 @@ feature 'user views recipes', %{
 
     visit '/'
 
-    click_on "View all user recipes"
+    click_on "VIEW RECIPES"
 
     expect(page).to have_content(recipe1.name)
     expect(page).to have_content(recipe1.description)

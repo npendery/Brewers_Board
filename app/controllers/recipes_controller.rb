@@ -65,10 +65,10 @@ class RecipesController < ApplicationController
   def recipe_params
     list = [:name,
             :description,
-            :malt_grains,
-            :hops_schedule,
-            :directions,
-            :yeast,
+            :instructions,
+            :ingredients,
+            :style,
+            :yielder,
             :user
            ]
     params.require(:recipe).permit(list)
