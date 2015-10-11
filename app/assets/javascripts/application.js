@@ -15,7 +15,6 @@
 //= require best_in_place
 //= require foundation
 //= require private_pub
-//= require chat
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

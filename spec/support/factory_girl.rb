@@ -13,10 +13,10 @@ FactoryGirl.define do
   factory :recipe do
     sequence(:name) { |n| "recipe #{n}" }
     description "Hoppy and dense"
-    malt_grains "List \n of \n ingredients"
-    hops_schedule "First \n Second \n Third"
-    directions "You do this"
-    yeast "Yeast selection"
+    ingredients "List \n of \n ingredients"
+    instructions "First \n Second \n Third"
+    style "India Pale Ale"
+    yielder "Yeast selection"
     user
   end
 

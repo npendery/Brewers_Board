@@ -6,20 +6,20 @@
 <div> <%= @recipe.description %> </div>
 
 
-<h5> Malt and Grains </h5>
-<div> <%= @recipe.malt_grains %> </div>
+<h5> Style </h5>
+<div> <%= @recipe.style %> </div>
 
 
-<h5> Hops Schedule </h5>
-<div> <%= @recipe.hops_schedule %> </div>
+<h5> Yield </h5>
+<div> <%= @recipe.yielder %> </div>
 
 
-<h5> Directions </h5>
-<div> <%= @recipe.directions %> </div>
+<h5> Ingredients </h5>
+<div> <%= @recipe.ingredients %> </div>
 
 
-<h5> Yeast </h5>
-<div> <%= @recipe.yeast %> </div>
+<h5> Instructions </h5>
+<div> <%= @recipe.instructions %> </div>
 
 
 <% if @recipe.user == current_user || current_user.admin %>

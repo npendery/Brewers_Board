@@ -103,6 +103,6 @@ Event.create!(title: "Brewing this weekend!",
 
 Event.create!(title: "Brewing at Sahils!",
               description: "Making a Belgian Blone Ale",
-              treet: "50 D St", city: "Washington",
+              street: "50 D St", city: "Washington",
               state: "DC", date: "2015/10/10",
               time: "1:00pm", user: user4, group: g4)

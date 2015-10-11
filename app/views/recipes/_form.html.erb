@@ -3,24 +3,24 @@
 	<%= f.text_field :name %>
 	<br>
 	<br>
-	<%= f.label :description %>
+	<%= f.label :description, "Description" %>
 	<%= f.text_field :description %>
 	<br>
 	<br>
-	<%= f.label :malt_grains, 'Malt/Grains' %>
-	<%= f.text_field :malt_grains %>
+	<%= f.label :style, "Style" %>
+	<%= f.collection_select :style, Recipe::STYLES, :to_s, :to_s, prompt: true %>
 	<br>
 	<br>
-	<%= f.label :hops_schedule, "Hops Schedule" %>
-	<%= f.text_field :hops_schedule %>
+	<%= f.label :ingredients, "Ingredients" %>
+	<%= f.text_area :ingredients %>
 	<br>
 	<br>
-	<%= f.label :directions, 'Directions' %>
-	<%= f.text_field :directions %>
+	<%= f.label :instructions, "Instructions" %>
+	<%= f.text_area :instructions %>
 	<br>
 	<br>
-	<%= f.label :yeast, 'Yeast' %>
-	<%= f.text_field :yeast %>
+	<%= f.label :yielder, "Yield" %>
+	<%= f.text_field :yielder %>
 	<br>
 	<br>
 	<%= f.submit(((params[:action] == 'new') ? 'Create' : 'Update') + ' recipe', class: "submit-form") %>

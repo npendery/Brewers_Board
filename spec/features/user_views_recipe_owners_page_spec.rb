@@ -17,7 +17,7 @@ feature 'user views other user page', %{
 
     visit '/'
 
-    click_on "View all user recipes"
+    click_on "VIEW RECIPES"
 
     click_on recipe.name
 
@@ -34,7 +34,7 @@ feature 'user views other user page', %{
 
     visit '/'
 
-    click_on "View all users"
+    click_on "VIEW USERS"
 
     expect(page).to have_content(user1.username)
     expect(page).to have_content(user2.username)

@@ -15,7 +15,7 @@ feature 'user leaves group', %{
 
     sign_in(user1)
 
-    click_on 'View Brewing Groups'
+    click_on 'VIEW GROUPS'
 
     click_on group.name
 
@@ -24,6 +24,6 @@ feature 'user leaves group', %{
     click_on "Leave Group"
 
     expect(page).to have_content("Left group.")
-    expect(page).to have_content("Groups Index")
+    expect(page).to have_content("Brewing Groups")
   end
 end

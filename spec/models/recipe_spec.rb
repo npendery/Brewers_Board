@@ -9,17 +9,17 @@ RSpec.describe Recipe, type: :model do
   it { should have_valid(:description).when('this is really good stuff') }
   it { should_not have_valid(:description).when('', nil) }
 
-  it { should have_valid(:malt_grains).when('description') }
-  it { should_not have_valid(:malt_grains).when('', nil) }
+  it { should have_valid(:ingredients).when('description') }
+  it { should_not have_valid(:ingredients).when('', nil) }
 
-  it { should have_valid(:hops_schedule).when('description') }
-  it { should_not have_valid(:hops_schedule).when('', nil) }
+  it { should have_valid(:instructions).when('description') }
+  it { should_not have_valid(:instructions).when('', nil) }
 
-  it { should have_valid(:directions).when('description') }
-  it { should_not have_valid(:directions).when('', nil) }
+  it { should have_valid(:style).when('India Pale Ale') }
+  it { should_not have_valid(:style).when('', nil) }
 
-  it { should have_valid(:yeast).when('description') }
-  it { should_not have_valid(:yeast).when('', nil) }
+  it { should have_valid(:yielder).when('description') }
+  it { should_not have_valid(:yielder).when('', nil) }
 
   context 'uniqueness' do
     let!(:user) { FactoryGirl.create(:user) }

@@ -17,7 +17,7 @@ feature 'user edits a review', %{
 
     visit '/'
 
-    click_on "View all user recipes"
+    click_on "VIEW RECIPES"
 
     click_on recipe1.name
 
@@ -40,7 +40,7 @@ feature 'user edits a review', %{
 
     visit '/'
 
-    click_on "View all user recipes"
+    click_on "VIEW RECIPES"
 
     click_on recipe1.name
 

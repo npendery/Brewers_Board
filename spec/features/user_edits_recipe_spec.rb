@@ -17,7 +17,7 @@ feature 'user edits recipe', %{
 
     sign_in(user)
 
-    click_on 'View all user recipes'
+    click_on 'VIEW RECIPES'
 
     click_on recipe.name
 
@@ -37,7 +37,7 @@ feature 'user edits recipe', %{
 
     sign_in(user)
 
-    click_on 'View all user recipes'
+    click_on 'VIEW RECIPES'
 
     click_on recipe.name
 
@@ -57,7 +57,7 @@ feature 'user edits recipe', %{
 
     sign_in(user2)
 
-    click_on 'View all user recipes'
+    click_on 'VIEW RECIPES'
 
     click_on recipe.name
 
