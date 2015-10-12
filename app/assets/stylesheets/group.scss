@@ -6,11 +6,11 @@ $white: #ffffff;
   font-weight: bold;
 }
 
-.groups {
+.indexs {
   text-align: center;
 }
 
-.group {
+.index {
   background-color: rgba(244, 162, 23, 0.66);
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
@@ -20,7 +20,7 @@ $white: #ffffff;
   padding: 30px;
 }
 
-.group-title {
+.index-title {
   background-color: rgba(11, 71, 204, 0.62);
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -30,12 +30,12 @@ $white: #ffffff;
   padding: 8px;
 }
 
-.group-description {
+.index-description {
   font-size: 1.8vw;
   margin-top: 15px;
 }
 
 .back-link {
-  color: $white;
+  color: rgb(255, 255, 255);
   font-size: 0.8vw;
 }
