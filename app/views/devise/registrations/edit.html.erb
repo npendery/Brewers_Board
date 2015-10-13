@@ -4,18 +4,23 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :username %><br />
+    <%= f.label :username, class: "form-label" %><br />
     <%= f.email_field :username, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :city %><br />
+    <%= f.label :city, class: "form-label" %><br />
     <%= f.email_field :city, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, class: "form-label" %><br />
     <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :profile_photo, "Profile Photo", class: "form-label" %>
+    <%= f.file_field :profile_photo %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -23,17 +28,17 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :password, class: "form-label" %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, class: "form-label" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :current_password, class: "form-label" %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
