@@ -2,40 +2,37 @@ $white: #ffffff;
 
 .title {
   color: $white;
-  font-size: 5vw;
+  font-size: 4vw;
   font-weight: bold;
 }
 
-.groups {
+.indexs {
   text-align: center;
 }
 
-.group {
+.index {
   background-color: rgba(244, 162, 23, 0.66);
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
   border-radius: 15px;
   margin: 20px;
-  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
   padding: 30px;
 }
 
-.group-title {
+.index-title {
   background-color: rgba(11, 71, 204, 0.62);
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
   border-radius: 20px;
   color: $white;
-  font-size: 2.8vw;
+  font-size: 2.2vw;
   padding: 8px;
 }
 
-.group-description {
-  font-size: 1.8vw;
+.index-description {
+  font-size: 1.4vw;
   margin-top: 15px;
-}
-
-.back-link {
-  color: $white;
-  font-size: 0.8vw;
 }

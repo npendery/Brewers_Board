@@ -15,6 +15,7 @@
 //= require best_in_place
 //= require foundation
 //= require private_pub
+//= require vendor/modernizr
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

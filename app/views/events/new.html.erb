@@ -1,5 +1,7 @@
-<h4> New Event </h4>
+<h4 class="header-title"> New Event </h4>
 
+<div class="review-box">
 <%= render 'form' %>
+</div>
 
-<%= link_to "Back to group", group_path(@group) %>
+<%= link_to "Back to group", group_path(@group), class: "back-link" %>

@@ -1,25 +1,19 @@
-<h1>Recipes Index</h1>
+<div class="title">Available Recipes</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @recipes.each do |recipe| %>
-      <tr>
-        <td><%= link_to recipe.name, recipe_path(recipe) %></td>
-        <td><%= recipe.description %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<div class="row">
+  <% @recipes.each do |recipe| %>
+  <div class="medium-12 large-12 columns">
+    <article class="index text-center">
+      <%= link_to recipe.name, recipe_path(recipe), class: "index-title" %></td>
+      <div class="index-description">
+      <%= recipe.description %></td>
+      </div>
+    </article>
+  </div>
+  <% end %>
+</div>
 <br>
 
-<div>
-<%= link_to "Back to home", root_path %>
+<div class="row">
+<%= link_to "Back to home", root_path, class: "back-link" %>
 </div>

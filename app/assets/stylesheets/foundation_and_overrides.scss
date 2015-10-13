@@ -114,7 +114,7 @@ $font-weight-bold: bold;
 // $oil         : #333333;
 // $jet         : #222222;
 // $black       : #000000;
-$customhover : rgba(247, 174, 64, 0.8);
+$customhover : rgba(247, 174, 64, 1);
 
 // We use these as default colors throughout
 $primary-color: #008cba;
@@ -1421,7 +1421,7 @@ $topbar-bg-color: $customhover;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
-// $topbar-link-bg-hover: $jet;
+$topbar-link-bg-hover: $customhover;
 $topbar-link-bg-color-hover: $customhover;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);

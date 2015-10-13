@@ -1,5 +1,7 @@
-<h4> Add a Review </h4>
+<h4 class="review-title"> Add a Review </h4>
 
-<%= render 'reviews/form' %>
+<div class="review-box">
+  <%= render 'reviews/form' %>
+</div>
 
-<%= link_to "Back to recipe", recipe_path(@recipe) %>
+<%= link_to "Back to recipe", recipe_path(@recipe), class: "back-link" %>

@@ -1,65 +1,68 @@
-<h3><%= @recipe.name %></h3>
-<h4>Created by: <%= link_to @recipe.user.username, user_path(@recipe.user) %></h4>
+<h3 class="title"><%= @recipe.name %></h3>
+<h4>Created by: <%= link_to @recipe.user.username, user_path(@recipe.user), class:"member" %></h4>
 
-
-<h5> Description </h5>
-<div> <%= @recipe.description %> </div>
-
-
-<h5> Style </h5>
-<div> <%= @recipe.style %> </div>
-
-
-<h5> Yield </h5>
-<div> <%= @recipe.yielder %> </div>
-
-
-<h5> Ingredients </h5>
-<div> <%= @recipe.ingredients %> </div>
-
-
-<h5> Instructions </h5>
-<div> <%= @recipe.instructions %> </div>
-
-
-<% if @recipe.user == current_user || current_user.admin %>
-  <%= link_to "Edit Recipe", edit_recipe_path(@recipe) %>
-  <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete %>
+<% if current_user != nil %>
+  <% if @recipe.user == current_user || current_user.admin %>
+    <%= link_to "Edit Recipe", edit_recipe_path(@recipe) %>
+    <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete %>
+  <% end %>
 <% end %>
 
-<% if @recipe.reviews.find_by(user: current_user) == nil && @recipe.user != current_user %>
+
+<div class="recipe-body">
+  <h5> Description </h5>
+  <div> <%= @recipe.description %> </div>
+  <br>
+
+  <h5> Style </h5>
+  <div> <%= @recipe.style %> </div>
+  <br>
+
+  <h5> Yield </h5>
+  <div> <%= @recipe.yielder %> </div>
+  <br>
+
+  <h5> Ingredients </h5>
+  <div> <%= @recipe.ingredients %> </div>
+  <br>
+
+  <h5> Instructions </h5>
+  <div> <%= @recipe.instructions %> </div>
+  <br>
+
   <div class="row">
-    <%= link_to "Review Recipe", new_recipe_review_path(@recipe) %>
-  </div>
-<% end %>
-
-<div class="row">
-  <% if @reviews.present? %>
-    <h5>Reviews</h5>
-    <% @reviews.order(created_at: :desc).each do |review| %>
-      <ul>
-        <div class="row">
-          <div class="columns large-12 small-6">
-            <li>
-              <%= review.title.capitalize %>
-            </li>
-            <li>Rating:
-              <%= review.rating %>
-            </li>
-            <% unless !review.description.present? %>
-            <li> Description:
-              <%= review.description %>
-            </li>
-            <% end %>
-            <% if current_user == review.user || current_user.admin %>
-              <li class="small-font"><%= link_to "Edit Review", edit_review_path(review) %> or
-              <%= link_to "Delete Review", review_path(review), method: :delete %></li>
-            <% end %>
+    <% if @reviews.present? %>
+      <h5>Reviews</h5>
+      <% @reviews.order(created_at: :desc).each do |review| %>
+        <ul>
+          <div class="row">
+            <div class="columns large-12 small-6">
+              <li>
+                <%= review.title.capitalize %>
+              </li>
+              <li>Rating:
+                <%= review.rating %>
+              </li>
+              <% unless !review.description.present? %>
+              <li> Description:
+                <%= review.description %>
+              </li>
+              <% end %>
+              <% if current_user == review.user || current_user.admin %>
+                <li class="small-font"><%= link_to "Edit Review", edit_review_path(review) %> or
+                <%= link_to "Delete Review", review_path(review), method: :delete %></li>
+              <% end %>
+            </div>
           </div>
-        </div>
-      </ul>
+        </ul>
+      <% end %>
     <% end %>
+  </div>
+  <% if @recipe.reviews.find_by(user: current_user) == nil && @recipe.user != current_user %>
+    <div class="row">
+      <%= link_to "Review Recipe", new_recipe_review_path(@recipe), class: "submit-form" %>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "Back to Recipes", recipes_path %>
+<%= link_to "Back to Recipes", recipes_path, class: "back-link" %>
