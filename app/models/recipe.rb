@@ -22,7 +22,7 @@ class Recipe < ActiveRecord::Base
       score
     else
       reviews.each do |review|
-        score += review.rating
+        score += review.rating.to_f
       end
       score / reviews.count
     end

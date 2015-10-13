@@ -1,17 +1,17 @@
 <%= form_for [@group, @event] do |f| %>
-	<%= f.label :title %>
+	<%= f.label :title, class: "form-label" %>
 	<%= f.text_field :title %>
-	<%= f.label :description %>
+	<%= f.label :description, class: "form-label" %>
 	<%= f.text_area :description %>
-	<%= f.label :street %>
+	<%= f.label :street, class: "form-label" %>
 	<%= f.text_field :street %>
-	<%= f.label :city %>
+	<%= f.label :city, class: "form-label" %>
 	<%= f.text_field :city %>
-	<%= f.label :state %>
+	<%= f.label :state, class: "form-label" %>
 	<%= f.collection_select :state, Event::STATES, :to_s, :to_s %>
-	<%= f.label :date %>
+	<%= f.label :date, class: "form-label" %>
 	<%= f.date_field :date, min: Date.today %>
-	<%= f.label :time %>
+	<%= f.label :time, class: "form-label" %>
 	<%= f.time_field :time %>
 	<%= f.submit(((params[:action] == 'new') ? 'Create' : 'Update') + ' event', class: "submit-form") %>
 <% end %>

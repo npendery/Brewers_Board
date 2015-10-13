@@ -1,6 +1,8 @@
-<h1>Add a Recipe</h1>
+<h1 class="header-title">Add a Recipe</h1>
 <br>
+<div class="form-layout">
 <%= render partial: 'recipes/form' %>
+</div>
 <br>
 <br>
-<%= link_to "Back to home", root_path %>
+<%= link_to "Back to home", root_path, class: "back-link" %>

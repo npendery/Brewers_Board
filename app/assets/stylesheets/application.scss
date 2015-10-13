@@ -26,10 +26,14 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
-.top-bar {
-  // background-color: rgba(244, 162, 23, 0.66);
+.search-header {
+  color: $white;
+  font-size: 2vw;
 }
 
 .right {
@@ -46,6 +50,11 @@ body {
   color: rgb(255, 255, 255);
 }
 
+.home-page {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .main-area {
   background: rgba(108, 108, 108, 0.5);
   -moz-border-radius: 30px;
@@ -54,6 +63,13 @@ body {
   margin: 30px;
   margin-top: 60px;
   padding: 50px;
+  border-left: 10px;
+}
+
+.full-area {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 div .search-bar-only {
@@ -67,7 +83,6 @@ div .search-bar-only {
 }
 
 h4 {
-  background: rgba(65, 92, 108, 0.5);
   color: $white;
   font: bold 24px/45px Helvetica, Sans-Serif;
   font-variant: small-caps;
@@ -80,61 +95,103 @@ ul {
   margin-left: 4px;
 }
 
-.container {
-  border: 30px;
-  margin-top: 20px;
-
-  h1 {
-    background: rgba(0, 0, 0, 0.6);
-    -moz-border-radius: 15px;
-    -webkit-border-radius: 15px;
-    border-radius: 15px;
-    color: $white;
-    font: bold 24px/45px Helvetica, Sans-Serif;
-    font-variant: small-caps;
-    padding: 0;
-    text-align: center;
-    width: 250px;
-  }
-
-  .text-field {
-    height: 25px;
-    margin-bottom: 1px;
-    padding: 5px;
-  }
-
-  .error-explanation {
-    color: $red;
-    font-size: 10px;
-    font-style: italic;
-    padding-bottom: 15px;
-  }
-
-  select {
-    height: 25px;
-    padding: 5px;
-  }
-
-  .submit-form {
-    background: rgba(0, 0, 0, 0.6);
-    color: $white;
-    font: bold 12px/24px Helvetica, Sans-Serif;
-    margin-bottom: 40px;
-    margin-top: 10px;
-    padding: 1px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
+.error-explanation {
+  color: $red;
+  font-size: 10px;
+  font-style: italic;
+  padding-bottom: 15px;
 }
 
-// #footer{
-//     height: 50px;
-//     position: fixed;
-//     bottom: 0px;
-//     left: 0px;
-//     line-height: 50px;
-//     color: #aaa;
-//     text-align: center;
-//     width: 100%;
-//     background-color: $black;
-// }
+.submit-form {
+  background: rgba(0, 0, 0, 0.6);
+  color: $white;
+  font: bold 12px/24px Helvetica, Sans-Serif;
+  margin-bottom: 40px;
+  margin-top: 10px;
+  padding: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.review-title {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.review-box {
+  height: 500px;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  color: $white;
+}
+
+.signup-box {
+  height: 600px;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  color: $white;
+}
+
+.login-box {
+  height: 400px;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  color: $white;
+}
+
+.form-layout {
+  height: 900px;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  color: $white;
+}
+
+.header-title {
+  color: $white;
+}
+
+.form-label {
+  color: $white;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.index-group {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.member-list {
+  color: $white;
+  list-style-type: none;
+}
+
+.member {
+  color: rgba(11, 71, 204, 1);
+}
+
+.link {
+  color: $white;
+}
+
+.recipe-body {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  color: $white;
+  text-align: left;
+  list-style-type: none;
+}
+
+.back-link {
+  color: rgb(255, 255, 255);
+  font-size: 0.8vw;
+}
