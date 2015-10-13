@@ -4,15 +4,15 @@
     <% @users.each do |user| %>
     <div class="medium-12 large-12 columns">
       <article class="index text-center member-list member<%= user.id %>">
-        <%= link_to user.username, user_path(user), class:"member" %>
-        <%= user.city %><br>
+        User: <%= link_to user.username, user_path(user), class: "member" %><br>
+        Location: <%= user.city %><br>
         <% if current_user.admin == true %>
         Admin: <%= user.admin %>
         <div class="delete-user">
-          <%= link_to "Delete user", user_path(user), method: :delete, class:"member" %>
+          <%= link_to "Delete user", user_path(user), method: :delete, class: "member" %>
         </div>
         <div class="change-status">
-          <%= link_to "Change admin status", user_path(user), method: :put, class:"member" %>
+          <%= link_to "Change admin status", user_path(user), method: :put, class: "member" %>
         </div>
         <% end %>
     </article>

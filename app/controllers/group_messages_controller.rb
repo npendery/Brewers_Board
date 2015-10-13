@@ -56,7 +56,7 @@ class GroupMessagesController < ApplicationController
 
   def authorize_user
     @group_message = GroupMessage.find(params[:id])
-    if !(@group_message.user == current_user) || current_user.admin == false
+    if !(@group_message.user == current_user) && current_user.admin == false
       raise ActionController::RoutingError.new("Not Found")
     end
   end

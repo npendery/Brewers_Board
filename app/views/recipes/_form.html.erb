@@ -1,26 +1,26 @@
 <%= form_for @recipe do |f| %>
 	<%= f.label :name, class: "form-label" %>
-	<%= f.text_field :name, class: "error-explanation" %>
+	<%= f.text_field :name %>
 	<br>
 	<br>
 	<%= f.label :description, "Description", class: "form-label" %>
-	<%= f.text_field :description, class: "error-explanation" %>
+	<%= f.text_field :description %>
 	<br>
 	<br>
 	<%= f.label :style, "Style", class: "form-label" %>
-	<%= f.collection_select :style, Recipe::STYLES, :to_s, :to_s, prompt: true, class: "error-explanation" %>
+	<%= f.collection_select :style, Recipe::STYLES, :to_s, :to_s, prompt: true %>
 	<br>
 	<br>
 	<%= f.label :ingredients, "Ingredients", class: "form-label" %>
-	<%= f.text_area :ingredients, class: "error-explanation" %>
+	<%= f.text_area :ingredients %>
 	<br>
 	<br>
 	<%= f.label :instructions, "Instructions", class: "form-label" %>
-	<%= f.text_area :instructions, class: "error-explanation" %>
+	<%= f.text_area :instructions %>
 	<br>
 	<br>
 	<%= f.label :yielder, "Yield", class: "form-label" %>
-	<%= f.text_field :yielder, class: "error-explanation" %>
+	<%= f.text_field :yielder %>
 	<br>
 	<br>
 	<%= f.submit(((params[:action] == 'new') ? 'Create' : 'Update') + ' recipe', class: "submit-form") %>

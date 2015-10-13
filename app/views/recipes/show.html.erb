@@ -3,31 +3,37 @@
 
 <% if current_user != nil %>
   <% if @recipe.user == current_user || current_user.admin %>
-    <%= link_to "Edit Recipe", edit_recipe_path(@recipe) %>
-    <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete %>
+    <%= link_to "Edit Recipe", edit_recipe_path(@recipe), class:"link" %> or
+    <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete, class:"link" %>
   <% end %>
 <% end %>
 
 
 <div class="recipe-body">
   <h5> Description </h5>
-  <div> <%= @recipe.description %> </div>
+    <div> <%= @recipe.description %> </div>
   <br>
 
   <h5> Style </h5>
-  <div> <%= @recipe.style %> </div>
+    <div> <%= @recipe.style %> </div>
   <br>
 
   <h5> Yield </h5>
-  <div> <%= @recipe.yielder %> </div>
+    <div> <%= @recipe.yielder %> </div>
   <br>
 
   <h5> Ingredients </h5>
-  <div> <%= @recipe.ingredients %> </div>
+    <div> <% @ingredients.each do |line| %>
+      <%= line %> <br>
+      <% end %>
+    </div>
   <br>
 
   <h5> Instructions </h5>
-  <div> <%= @recipe.instructions %> </div>
+    <div> <% @instructions.each do |line| %>
+      <%= line %> <br>
+      <% end %>
+    </div>
   <br>
 
   <div class="row">
@@ -49,8 +55,8 @@
               </li>
               <% end %>
               <% if current_user == review.user || current_user.admin %>
-                <li class="small-font"><%= link_to "Edit Review", edit_review_path(review) %> or
-                <%= link_to "Delete Review", review_path(review), method: :delete %></li>
+                <li class="small-font"><%= link_to "Edit Review", edit_review_path(review), class:"member" %> or
+                <%= link_to "Delete Review", review_path(review), method: :delete, class:"member" %></li>
               <% end %>
             </div>
           </div>

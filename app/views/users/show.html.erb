@@ -1,8 +1,7 @@
 <h3 class="title">User Info</h3>
 
-<div class="container">
-  <div class="row">
-    <div class="six columns recipe-body">
+<div class="container clearfix">
+    <div class="left recipe-body">
       <h5> Username </h5>
       <div> <%= @user.username %> </div>
       <br>
@@ -25,14 +24,13 @@
         </div>
       <% end %>
     </div>
-    <div class="six columns recipe-body">
+    <div class="right recipe-body">
       <% if @user.profile_photo != nil %>
         <div> <%= image_tag("beer_icon.png", size: "150") %> </div>
       <% else %>
         <div> <%= image_tag(@user.profile_photo) %> </div>
       <% end %>
     </div>
-  </div>
 </div>
 
 

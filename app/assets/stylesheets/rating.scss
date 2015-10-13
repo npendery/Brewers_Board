@@ -13,9 +13,8 @@ fieldset, label { margin: 0; padding: 0; }
   font-size: 1.75em;
 	font-family: foundation-icons;
   display: inline-block;
-	content: "\f1ee";
+	content: image-url("beer_icon.png");
 		text-shadow: 0 0 5px #8a8a8a;
-  background-image: image-url("beer_icon.png");
 }
 
 .rating > label {
