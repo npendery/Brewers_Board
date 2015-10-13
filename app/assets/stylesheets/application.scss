@@ -67,13 +67,13 @@ body {
 }
 
 .full-area {
-  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  max-width: 800px;
 }
 
 div .search-bar-only {
-  background-color: rgba(11, 71, 204, .66);
+  background-color: rgba(11, 71, 204, 0.66);
   border-color: $white;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
@@ -114,41 +114,41 @@ ul {
 }
 
 .review-title {
-  width: 500px;
   margin-left: auto;
   margin-right: auto;
+  width: 500px;
 }
 
 .review-box {
+  color: $white;
   height: 500px;
-  width: 500px;
   margin-left: auto;
   margin-right: auto;
-  color: $white;
+  width: 500px;
 }
 
 .signup-box {
+  color: $white;
   height: 600px;
-  width: 500px;
   margin-left: auto;
   margin-right: auto;
-  color: $white;
+  width: 500px;
 }
 
 .login-box {
+  color: $white;
   height: 400px;
-  width: 500px;
   margin-left: auto;
   margin-right: auto;
-  color: $white;
+  width: 500px;
 }
 
 .form-layout {
+  color: $white;
   height: 900px;
-  width: 500px;
   margin-left: auto;
   margin-right: auto;
-  color: $white;
+  width: 500px;
 }
 
 .header-title {
@@ -183,12 +183,12 @@ ul {
 }
 
 .recipe-body {
-  width: 500px;
+  color: $white;
+  list-style-type: none;
   margin-left: auto;
   margin-right: auto;
-  color: $white;
   text-align: left;
-  list-style-type: none;
+  width: 500px;
 }
 
 .back-link {
