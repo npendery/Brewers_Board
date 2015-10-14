@@ -23,11 +23,11 @@ fieldset {
   text-align: center;
 }
 
-.rating > input:checked ~ label, /* show highlighted beer when clicked */
-.rating:not(:checked) > label:hover, /* hover current beer */
-.rating:not(:checked) > label:hover ~ label { content: image-url("rating_icon.png"); } /* hover previous beers in list */
+.rating > input:checked ~ label, // show highlighted beer when clicked
+.rating:not(:checked) > label:hover, // hover current beer
+.rating:not(:checked) > label:hover ~ label { content: image-url("rating_icon.png"); } // hover previous beers in list
 
-.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked + label:hover, // hover current star when changing rating
 .rating > input:checked ~ label:hover,
-.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > label:hover ~ input:checked ~ label, // lighten current selection
 .rating > input:checked ~ label:hover ~ label { content: image-url("rating_icon.png"); }

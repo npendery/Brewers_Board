@@ -178,11 +178,11 @@ ul {
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
   border-radius: 15px;
+  color: $white;
+  list-style-type: none;
   margin: 20px;
   margin-left: auto;
   margin-right: auto;
-  color: $white;
-  list-style-type: none;
   max-height: 50px;
 }
 
@@ -196,19 +196,19 @@ ul {
 
 .recipe-body {
   background-color: rgba(94, 94, 94, 0.7);
-  border-style: solid;
-  border-color: #ffffff;
+  border-color: rgba(255, 255, 255, 1);
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
+  border-style: solid;
   color: $white;
   list-style-type: none;
   margin-left: auto;
   margin-right: auto;
-  text-align: left;
-  width: 500px;
   padding: 10px;
   padding-bottom: 5px;
+  text-align: left;
+  width: 500px;
 }
 
 .review-body {
@@ -216,10 +216,10 @@ ul {
   list-style-type: none;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 20px;
+  padding-top: 15px;
   text-align: left;
   width: 500px;
-  padding-top: 15px;
-  padding-left: 20px;
 }
 
 .user-body {
@@ -235,17 +235,17 @@ ul {
 .message-list {
   color: $white;
   list-style-type: none;
-  text-align: left;
   max-height: 200px;
   overflow: auto;
+  text-align: left;
 }
 
 .event-list {
   color: $white;
   list-style-type: none;
-  text-align: left;
   max-height: 400px;
   overflow: auto;
+  text-align: left;
 }
 
 .recipe-list {
