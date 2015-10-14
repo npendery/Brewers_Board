@@ -3,6 +3,7 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.all.order(created_at: :desc)
+    # @styles = @recipies.styles
   end
 
   def new
@@ -27,6 +28,8 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @reviews = @recipe.reviews
+    @ingredients = @recipe.ingredients.split("\r\n")
+    @instructions = @recipe.instructions.split("\r\n")
   end
 
   def edit
@@ -54,13 +57,6 @@ class RecipesController < ApplicationController
   end
 
   protected
-
-  # def authorize_user
-  #   @review = Review.find(params[:id])
-  #   if !(current_user.owner? || @review.user == current_user)
-  #     raise ActionController::RoutingError.new("Not Found")
-  #   end
-  # end
 
   def recipe_params
     list = [:name,

@@ -18,6 +18,7 @@ gem 'best_in_place', '~> 3.0.1'
 gem 'websocket-rails'
 gem "private_pub"
 gem "thin"
+gem "dotenv-rails"
 
 group :test do
   gem 'coveralls', require: false
@@ -32,7 +33,6 @@ group :development, :test do
   gem 'factory_girl'
   gem 'valid_attribute'
   gem 'shoulda-matchers', require: false
-  gem 'dotenv-rails'
 end
 
 group :development do

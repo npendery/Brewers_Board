@@ -1,6 +1,7 @@
 <%= form_for [@recipe, @review] do |f| %>
 	<%= f.label :title, class: "form-label" %>
 	<%= f.text_field :title %>
+	<br>
 	<%= f.label :rating, class: "form-label" %>
 	<%= field_set_tag nil, class: "rating" do %>
 		<%= radio_button_tag("review[rating]", 5) %>
@@ -14,6 +15,7 @@
 		<%= radio_button_tag("review[rating]", 1) %>
 		<%= label_tag('review_rating_1', '') %>
 	<% end %>
+	<br><br>
 	<br><br>
 	<%= f.label :description, class: "form-label" %>
 	<%= f.text_field :description %>

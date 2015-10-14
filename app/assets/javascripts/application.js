@@ -25,5 +25,5 @@ $(document).ready(function() {
     $(".alert-box").fadeOut("slow", function() {
       $(this).remove();
     });
-  }, 3500);
+  }, 2500);
 });

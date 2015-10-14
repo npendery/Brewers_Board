@@ -1,27 +1,45 @@
 <h3 class="title">User Info</h3>
 
-<div class="recipe-body">
-  <h5> Username </h5>
-  <div> <%= @user.username %> </div>
-  <br>
-  <h5> City </h5>
-  <div> <%= @user.city %> </div>
-  <br>
-  <h5> Contributed Recipes </h5>
-  <% if @user.recipes.present? %>
-    <div> <% @user.recipes.each do |recipe| %>
-      <li> Name: <%= recipe.name %> </li>
-      <li> Average Score:
-        <% if recipe.reviews.count != 0 %>
-          <%= recipe.average_score %>
-        <% else %>
-          No Reviews Yet
-        <% end %>
-      </li>
+<div class="container clearfix">
+  <div class="row">
+    <div class="large-6 columns">
       <br>
+      <br>
+      <% if @user.profile_photo == nil %>
+        <div> <%= image_tag("beer_icon.png", size: "150") %> </div>
+      <% else %>
+        <div> <%= image_tag(@user.profile_photo, size: "150") %> </div>
       <% end %>
     </div>
-  <% end %>
+    <div class="large-6 columns user-body">
+      <h5> Username </h5>
+      <div> <%= @user.username %> </div>
+      <br>
+      <h5> City </h5>
+      <div> <%= @user.city %> </div>
+      <br>
+      <h5> Contributed Recipes </h5>
+      <% if @user.recipes.present? %>
+        <ul> <% @user.recipes.each do |recipe| %>
+          <li> Name: <%= recipe.name %> </li>
+          <li> Average Score:
+            <% if recipe.reviews.count != 0 %>
+              <%= recipe.average_score %>
+            <% end %>
+          </li>
+          <br>
+          <% end %>
+      <% else %>
+        No Reviews Yet
+      </ul>
+      <% end %>
+    </div>
+  </div>
 </div>
-
+<br>
+<br>
+<% if @user == current_user %>
+  <%= link_to "Edit Profile", edit_user_registration_path, class: "link" %>
+<% end %>
+<br>
 <%= link_to "All Users", users_path, class: "back-link" %>

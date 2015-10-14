@@ -32,7 +32,7 @@
           <li><%= link_to 'Create Recipe', new_recipe_path %></li>
           <li><%= link_to 'Create Group', new_group_path %></li>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-          <li><%= link_to 'Profile', user_path(current_user) %></li>
+          <li class="profile-photo"><%= link_to image_tag(current_user.profile_photo, class: "photo-edit"), user_path(current_user) %></li>
         <%- else -%>
           <li><%= link_to 'Sign Up', new_user_registration_path %></li>
           <li><%= link_to 'Sign In', new_user_session_path %></li>
@@ -55,9 +55,6 @@
       </div>
     </div>
   </div>
-  <div id='footer'>
-  </div>
-  <audio id="chatAudio"><source src="/sounds/notification.mp3" type="audio/mpeg"></audio>
   <%= javascript_include_tag "application" %>
 </body>
 </html>
