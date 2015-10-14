@@ -27,14 +27,3 @@ $(document).ready(function() {
     });
   }, 2500);
 });
-
-$(".delete").click(function(event){
-    event.preventDefault();
-    var url = $(this).attr('href');
-    $.ajax({
-        type: "POST",
-        url: url,
-        dataType: "json",
-        data: {"_method":"delete"},
-    });
-});

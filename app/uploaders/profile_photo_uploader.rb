@@ -8,4 +8,8 @@ class ProfilePhotoUploader < CarrierWave::Uploader::Base
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
+
+  def default_url(*)
+    'profile2_icon.png'
+  end
 end

@@ -3,11 +3,7 @@
   <% @users.each do |user| %>
   <div class="row index">
     <div class="medium-6 large-6 columns">
-      <% if user.profile_photo == nil %>
-        <div> <%= image_tag("beer_icon.png", size: "100") %> </div>
-      <% else %>
-        <div> <%= image_tag(user.profile_photo, size: "100") %> </div>
-      <% end %>
+      <%= image_tag(user.profile_photo, size: "100", class: "photo-edit") %>
     </div>
     <div class="medium-6 large-6 columns">
       <article class="text-center member-list member<%= user.id %>">

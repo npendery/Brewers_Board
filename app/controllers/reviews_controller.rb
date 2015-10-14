@@ -47,16 +47,8 @@ class ReviewsController < ApplicationController
     @recipe = @review.recipe
     @review.destroy
 
-    respond_to do |format|
-      format.html {
-        flash[:notice] = "Review deleted."
-        redirect_to recipe_path(@recipe)
-      }
-      format.json {
-        flash[:notice] = "Review deleted."
-        render json: @recipe
-      }
-    end
+    flash[:notice] = "Review deleted."
+    redirect_to recipe_path(@recipe)
   end
 
   protected
