@@ -1,9 +1,16 @@
 <div class="title">Community</div>
 
-<div class="row">
-    <% @users.each do |user| %>
-    <div class="medium-12 large-12 columns">
-      <article class="index text-center member-list member<%= user.id %>">
+  <% @users.each do |user| %>
+  <div class="row index">
+    <div class="medium-6 large-6 columns">
+      <% if user.profile_photo == nil %>
+        <div> <%= image_tag("beer_icon.png", size: "100") %> </div>
+      <% else %>
+        <div> <%= image_tag(user.profile_photo, size: "100") %> </div>
+      <% end %>
+    </div>
+    <div class="medium-6 large-6 columns">
+      <article class="text-center member-list member<%= user.id %>">
         User: <%= link_to user.username, user_path(user), class: "member" %><br>
         Location: <%= user.city %><br>
         <% if current_user.admin == true %>
@@ -15,10 +22,11 @@
           <%= link_to "Change admin status", user_path(user), method: :put, class: "member" %>
         </div>
         <% end %>
-    </article>
+      </article>
+    </div>
   </div>
+  <br>
   <% end %>
-</div>
 <br>
 <div>
 <%= link_to "Back to home", root_path, class: "back-link" %>

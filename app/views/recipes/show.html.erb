@@ -35,40 +35,41 @@
       <% end %>
     </div>
   <br>
-
-  <div class="row">
-    <% if @reviews.present? %>
-      <h5>Reviews</h5>
-      <% @reviews.order(created_at: :desc).each do |review| %>
-        <ul>
-          <div class="row">
-            <div class="columns large-12 small-6">
-              <li>
-                <%= review.title.capitalize %>
-              </li>
-              <li>Rating:
-                <%= review.rating %>
-              </li>
-              <% unless !review.description.present? %>
-              <li> Description:
-                <%= review.description %>
-              </li>
-              <% end %>
-              <% if current_user == review.user || current_user.admin %>
-                <li class="small-font"><%= link_to "Edit Review", edit_review_path(review), class:"member" %> or
-                <%= link_to "Delete Review", review_path(review), method: :delete, class:"member" %></li>
-              <% end %>
-            </div>
+</div>
+<div class="row review-body">
+  <% if @reviews.present? %>
+    <h5>Reviews</h5>
+    <% @reviews.order(created_at: :desc).each do |review| %>
+      <ul>
+        <div class="row">
+          <div class="columns large-12 small-6">
+            <li>
+              <%= review.title.capitalize %>
+            </li>
+            <li>Rating:
+              <%= review.rating %>
+            </li>
+            <% unless !review.description.present? %>
+            <li> Description:
+              <%= review.description %>
+            </li>
+            <% end %>
+            <% if current_user == review.user || current_user.admin %>
+              <li class="small-font"><%= link_to "Edit Review", edit_review_path(review), class:"member" %> or
+              <%= link_to "Delete Review", review_path(review), class: "member delete", remote: true %></li>
+            <% end %>
           </div>
-        </ul>
-      <% end %>
+        </div>
+      </ul>
     <% end %>
-  </div>
-  <% if @recipe.reviews.find_by(user: current_user) == nil && @recipe.user != current_user %>
-    <div class="row">
-      <%= link_to "Review Recipe", new_recipe_review_path(@recipe), class: "submit-form" %>
-    </div>
   <% end %>
 </div>
+
+<% if @recipe.reviews.find_by(user: current_user) == nil && @recipe.user != current_user %>
+  <div class="row">
+    <%= link_to "Review Recipe", new_recipe_review_path(@recipe), class: "submit-form" %>
+  </div>
+<% end %>
+
 
 <%= link_to "Back to Recipes", recipes_path, class: "back-link" %>

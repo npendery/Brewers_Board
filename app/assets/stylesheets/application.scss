@@ -50,13 +50,14 @@ body {
 }
 
 .main-area {
-  background: rgba(11, 71, 204, 0.5);
+  background: rgba(11, 71, 204, 0.75);
   -moz-border-radius: 30px;
   -webkit-border-radius: 30px;
   border-radius: 30px;
   margin: 30px;
   margin-top: 60px;
   padding: 50px;
+  padding-top: 25px;
   border-left: 10px;
 }
 
@@ -67,7 +68,7 @@ body {
 }
 
 div .search-bar-only {
-  background-color: rgba(11, 71, 204, 0.66);
+  background-color: rgba(11, 71, 204, 0.75);
   border-color: $white;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
@@ -114,6 +115,14 @@ ul {
   width: 500px;
 }
 
+.event-box {
+  color: $white;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+}
+
 .signup-box {
   color: $white;
   height: 600px;
@@ -138,6 +147,14 @@ ul {
   width: 500px;
 }
 
+.create-recipe {
+  color: $white;
+  height: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+}
+
 .header-title {
   color: $white;
 }
@@ -157,8 +174,16 @@ ul {
 }
 
 .member-list {
+  background-color: rgba(244, 162, 23, 0.66);
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
   color: $white;
   list-style-type: none;
+  max-height: 50px;
 }
 
 .member {
@@ -170,12 +195,36 @@ ul {
 }
 
 .recipe-body {
+  background-color: rgba(94, 94, 94, 0.7);
+  border-style: solid;
+  border-color: #ffffff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
   color: $white;
   list-style-type: none;
   margin-left: auto;
   margin-right: auto;
   text-align: left;
   width: 500px;
+  padding: 10px;
+  padding-bottom: 5px;
+}
+
+.review-body {
+  color: $white;
+  list-style-type: none;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  width: 500px;
+  padding-top: 15px;
+  padding-left: 20px;
+}
+
+.user-body {
+  color: $white;
+  text-align: left;
 }
 
 .back-link {
@@ -188,6 +237,7 @@ ul {
   list-style-type: none;
   text-align: left;
   max-height: 200px;
+  overflow: auto;
 }
 
 .event-list {
@@ -195,4 +245,20 @@ ul {
   list-style-type: none;
   text-align: left;
   max-height: 400px;
+  overflow: auto;
+}
+
+.recipe-list {
+  max-height: 425px;
+  overflow: auto;
+}
+
+.groups-list {
+  max-height: 425px;
+  overflow: auto;
+}
+
+.profile-photo {
+  margin-right: 5px;
+  width: 60px;
 }

@@ -3,8 +3,7 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.all.order(created_at: :desc)
-    binding.pry
-    @styles = @recipies.styles
+    # @styles = @recipies.styles
   end
 
   def new
