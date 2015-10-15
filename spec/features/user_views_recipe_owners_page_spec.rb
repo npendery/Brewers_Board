@@ -36,7 +36,6 @@ feature 'user views other user page', %{
 
     click_on "VIEW USERS"
 
-    expect(page).to have_content(user1.username)
     expect(page).to have_content(user2.username)
   end
 end

@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  respond_to :html, :js
+  before_action :authorize_user, only: [:edit, :update, :destroy]
 
   def index
     @groups = Group.all.order(created_at: :desc)
@@ -57,12 +57,12 @@ class GroupsController < ApplicationController
 
   protected
 
-  # def authorize_user
-  #   @review = Review.find(params[:id])
-  #   if !(current_user.owner? || @review.user == current_user)
-  #     raise ActionController::RoutingError.new("Not Found")
-  #   end
-  # end
+  def authorize_user
+    @review = Review.find(params[:id])
+    if !(current_user.owner? && @review.user == current_user)
+      raise ActionController::RoutingError.new("Not Found")
+    end
+  end
 
   def current_member
     Membership.where(user_id: current_user, group_id: @group).first

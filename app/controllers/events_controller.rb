@@ -56,7 +56,7 @@ class EventsController < ApplicationController
 
   def authorize_user
     @event = Event.find(params[:id])
-    if !(@event.user == current_user) || current_user.admin == false
+    if !(@event.user == current_user) && current_user.admin == false
       raise ActionController::RoutingError.new("Not Found")
     end
   end

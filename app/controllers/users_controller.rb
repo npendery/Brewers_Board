@@ -1,16 +1,15 @@
 class UsersController < ApplicationController
+  before_action :authorize_user
+
   def index
-    authorize_user
     @users = User.all
   end
 
   def show
-    authorize_user
     @user = User.find(params[:id])
   end
 
   def update
-    authorize_user
     @user = User.find(params[:id])
     if @user.admin == true
       @user.admin = false
@@ -24,7 +23,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    authorize_user
     @user = User.find(params[:id])
     @user.destroy
 
