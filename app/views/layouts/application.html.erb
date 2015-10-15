@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BrewersBoard</title>
-  <%= stylesheet_link_tag 'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= javascript_include_tag "vendor/modernizr" %>
-  <%= csrf_meta_tags %>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,6 +8,13 @@
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
+  <title>BrewersBoard</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome'\
+  '/4.1.0/css/font-awesome.min.css' %>
 </head>
 <body>
 
@@ -48,13 +50,13 @@
   <div class="row full-area">
     <div class="small-centered large-centered text-center">
       <div class="main-area container large-12 medium-11 small-10 columns">
+
       <%= yield %>
 
-      <%= javascript_include_tag 'application' %>
-      <%= yield :extra_footer %>
       </div>
     </div>
   </div>
   <%= javascript_include_tag "application" %>
+  <%= yield :extra_footer %>
 </body>
 </html>

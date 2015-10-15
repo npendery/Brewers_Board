@@ -1,8 +1,0 @@
-<h5>User Messaging</h5>
-<% User.all.each do |user| %>
-    <ul>
-      <li>
-        <%= link_to "#{user.username}", "#", class: "btn btn-success btn-xs start-conversation" %>
-      </li>
-    </ul>
-<% end %>
