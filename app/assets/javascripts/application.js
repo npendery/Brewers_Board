@@ -16,6 +16,7 @@
 //= require foundation
 //= require private_pub
 //= require vendor/modernizr
+//= require chat
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

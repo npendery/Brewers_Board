@@ -5,11 +5,7 @@
     <div class="large-6 columns">
       <br>
       <br>
-      <% if @user.profile_photo == nil %>
-        <div> <%= image_tag("beer_icon.png", size: "150") %> </div>
-      <% else %>
-        <div> <%= image_tag(@user.profile_photo, size: "150") %> </div>
-      <% end %>
+        <div> <%= image_tag(@user.profile_photo, size: "150", class: "photo-edit") %> </div>
     </div>
     <div class="large-6 columns user-body">
       <h5> Username </h5>
