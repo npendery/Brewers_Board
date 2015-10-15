@@ -3,8 +3,10 @@
 
 <% if current_user != nil %>
   <% if @recipe.user == current_user || current_user.admin %>
+  <div class="owner-options">
     <%= link_to "Edit Recipe", edit_recipe_path(@recipe), class:"link" %> or
     <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete, class:"link" %>
+  </div>
   <% end %>
 <% end %>
 
@@ -42,7 +44,7 @@
     <% @reviews.order(created_at: :desc).each do |review| %>
       <ul>
         <div class="row">
-          <div class="columns large-12 small-6">
+          <div class="columns large-12 small-6 review-text">
             <li>
               <%= review.title.capitalize %>
             </li>

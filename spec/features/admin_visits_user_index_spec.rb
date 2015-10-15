@@ -18,7 +18,6 @@ feature 'admin visits users index', %{
     sign_in(user1)
     visit users_path
 
-    expect(page).to have_content(user1.username)
     expect(page).to have_content(user2.username)
     expect(page).to have_content("Delete user")
     expect(page).to have_content("Change admin status")
@@ -41,7 +40,6 @@ feature 'admin visits users index', %{
     visit users_path
 
     expect(page).to have_content(user1.username)
-    expect(page).to have_content(user2.username)
 
     target_text = ".member#{user1.id}"
     within (target_text) do
@@ -49,7 +47,6 @@ feature 'admin visits users index', %{
     end
 
     expect(page).to_not have_content(user1.username)
-    expect(page).to have_content(user2.username)
   end
 
   scenario 'admin makes another user an admin' do
@@ -60,7 +57,6 @@ feature 'admin visits users index', %{
     visit users_path
 
     expect(page).to have_content(user1.username)
-    expect(page).to have_content(user2.username)
 
     target_text = ".member#{user1.id}"
     within (target_text) do

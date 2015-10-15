@@ -11,7 +11,7 @@
       <div> <%= @group.description %> </div>
 
       <h5> Members </h5>
-      <div class="member-list">
+      <div class="group-member-list">
         <li><%= link_to @group.owner.username, user_path(@group.owner), class: "member" %></li>
         <% if @group.users.present? %>
           <% @group.users.each do |user| %>
@@ -22,7 +22,7 @@
     </div>
   </div>
   <br>
-  <HR WIDTH="90%">
+  <HR WIDTH="100%">
   <br>
   <div class="row">
     <div class="large-6 columns">
@@ -73,8 +73,8 @@
 <br>
 <br>
   <% if @group.owner == current_user || current_user.admin %>
-    <span><%= link_to "Edit", edit_group_path(@group), class: "link" %> or
-    <%= link_to "Delete", group_path(@group), method: :delete, class: "link" %> Group
+    <span class="owner-options"><%= link_to "Edit", edit_group_path(@group), class: "link" %>
+      or <%= link_to "Delete", group_path(@group), method: :delete, class: "link" %> Group
     </span>
   <% end %>
   <br>
