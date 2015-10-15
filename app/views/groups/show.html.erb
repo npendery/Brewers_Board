@@ -24,28 +24,33 @@
   <br>
   <HR WIDTH="100%">
   <br>
-  <div class="row">
-    <div class="large-6 columns">
+  <div class="row group-bottom">
+    <div class="large-6 medium-6 columns">
       <% if current_user != nil %>
         <% if @group.users.include?(current_user) || current_user == @group.owner %>
           <% if @group.group_messages.present? %>
             <h4>Messages</h4>
-              <div class="message-list">
-              <% @group.group_messages.each do |message| %>
-                <li>From: <%= message.user.username %></li>
-                <li><%= message.body %></li>
-                <li>
-                <% if message.user == current_user || current_user.admin %>
-                  <%= link_to "Edit", edit_group_message_path(message), class: "link" %> or
-                  <%= link_to "Delete", group_message_path(message), method: :delete, class: "link" %> message
-                <% end %>
-                </li>
-              </div>
+            <div class="message-list">
+            <% @group.group_messages.each do |message| %>
+              <HR WIDTH="90%">
+              <li>From: <%= message.user.username %></li>
+              <li><%= message.body %></li>
+              <li>
+              <% if message.user == current_user || current_user.admin %>
+                <div class="owner-options">
+                <%= link_to "Edit", edit_group_message_path(message), class: "link" %> or
+                <%= link_to "Delete", group_message_path(message), method: :delete, class: "link" %> message
+                </div>
+              <% end %>
+              </li>
             <% end %>
+            </div>
           <% end %>
+          <br>
+        <%= link_to "Message group", new_group_group_message_path(@group), class: "link" %>
       </div>
 
-      <div class="large-6 columns">
+      <div class="large-6 medium-6 columns">
         <h4>Events</h4>
         <div class="event-list">
           <% @events.each do |event| %>
@@ -59,11 +64,17 @@
             <li>When: <%= event.date.strftime("%m/%d/%y") %>,
                 <%= event.time.strftime("%I:%M %p") %>
             </li>
+            <% if @group.owner == current_user || current_user.admin %>
+              <div class="owner-options">
+              <%= link_to "Edit", edit_event_path(event), class: "link" %> or
+              <%= link_to "Delete", event_path(event), method: :delete, class: "link" %> event
+              </div>
+            <% end %>
             <br>
           <% end %>
         </div>
       <% end %>
-
+      <br>
       <% if @group.owner == current_user || current_user.admin %>
         <%= link_to "Add Event", new_group_event_path(@group), class: "link" %>
       <% end %>
@@ -71,14 +82,11 @@
   </div>
 </div>
 <br>
-<br>
   <% if @group.owner == current_user || current_user.admin %>
     <span class="owner-options"><%= link_to "Edit", edit_group_path(@group), class: "link" %>
       or <%= link_to "Delete", group_path(@group), method: :delete, class: "link" %> Group
     </span>
   <% end %>
-  <br>
-  <%= link_to "Message group", new_group_group_message_path(@group), class: "link" %>
   <% if @group.owner != current_user %>
     <% if @group.users.include?(current_user) %>
       <br>
