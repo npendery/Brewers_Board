@@ -7,7 +7,7 @@ class Review < ActiveRecord::Base
   validates :title, presence: true
   validates :rating, presence: true
   validates :user, uniqueness: { scope: :recipe,
-                                 message: "You can only review once" }
+                                 message: " can only review once" }
 
   def self.search(search)
     where('title ILIKE ?', "%#{search}%")

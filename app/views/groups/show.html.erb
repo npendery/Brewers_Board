@@ -92,7 +92,11 @@
       <br>
       <%= link_to "Leave Group", membership_path(id: @current_member), method: :delete, class: "link" %>
     <% else %>
-      <%= link_to "Join Group", memberships_path(group_id: @group.id), method: :post, class: "link" %>
+      <% if current_user != nil %>
+        <%= link_to "Join Group", memberships_path(group_id: @group.id), method: :post, class: "link" %>
+      <% else %>
+        <%= link_to "Join Group", new_user_session_path, class: "link" %>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>
