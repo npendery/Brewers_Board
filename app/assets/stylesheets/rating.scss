@@ -22,11 +22,6 @@ fieldset {
   content: image-url("rating_icon.png");
 }
 
-.rating > label {
-  color: #ddd;
-  text-align: center;
-}
-
 .rating > input:checked ~ label, // show highlighted beer when clicked
 // .rating:not(:checked) > label:hover, // hover current beer
 .rating:not(:checked) > label:hover ~ label { content: image-url("soft_rating_icon.png"); } // hover previous beers in list
