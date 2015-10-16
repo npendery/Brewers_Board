@@ -21,6 +21,8 @@
           <li> Average Score:
             <% if recipe.reviews.count != 0 %>
               <%= recipe.average_score %>
+            <% else %>
+              No Reviews Yet
             <% end %>
           </li>
           <br>
