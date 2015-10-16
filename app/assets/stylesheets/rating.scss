@@ -14,8 +14,12 @@ fieldset {
 .rating > input { display: none; }
 .rating > label:before {
   display: inline-block;
-  content: image-url("soft_rating_icon.png");
+  content: image-url("rating_icon.png");
   text-align: center;
+}
+
+.rating:hover > label:before {
+  content: image-url("rating_icon.png");
 }
 
 .rating > label {
@@ -24,10 +28,10 @@ fieldset {
 }
 
 .rating > input:checked ~ label, // show highlighted beer when clicked
-.rating:not(:checked) > label:hover, // hover current beer
-.rating:not(:checked) > label:hover ~ label { content: image-url("rating_icon.png"); } // hover previous beers in list
+// .rating:not(:checked) > label:hover, // hover current beer
+.rating:not(:checked) > label:hover ~ label { content: image-url("soft_rating_icon.png"); } // hover previous beers in list
 
 .rating > input:checked + label:hover, // hover current star when changing rating
 .rating > input:checked ~ label:hover,
 .rating > label:hover ~ input:checked ~ label, // lighten current selection
-.rating > input:checked ~ label:hover ~ label { content: image-url("rating_icon.png"); }
+.rating > input:checked ~ label:hover ~ label { content: image-url("soft_rating_icon.png"); }
