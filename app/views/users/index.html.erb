@@ -1,5 +1,5 @@
 <div class="title">Community</div>
-
+<div class="groups-list">
   <% @users.each do |user| %>
     <% if user != current_user %>
       <div class="row index">
@@ -28,6 +28,7 @@
       <br>
     <% end %>
   <% end %>
+</div>
 <br>
 <div>
 <%= link_to "Back to home", root_path, class: "back-link" %>
