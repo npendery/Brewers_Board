@@ -16,7 +16,7 @@
           <% if @search_results_recipe.present? %>
             <p class="search-header">Recipe Results</p>
             <% @search_results_recipe.each do |result| %>
-              <li><%= link_to result.name, recipe_path(result) %></li>
+              <li><%= link_to result.name, recipe_path(result), class: "link" %></li>
             <% end %>
           <HR WIDTH="90%">
           <% end %>
@@ -24,7 +24,7 @@
           <% if @search_results_review.present? %>
             <p class="search-header">Review Results</p>
             <% @search_results_review.each do |result| %>
-                <li><%= link_to result.recipe.name, recipe_path(result.recipe) %></li>
+                <li><%= link_to result.recipe.name, recipe_path(result.recipe), class: "link" %></li>
             <% end %>
             <HR WIDTH="90%">
           <% end %>
@@ -32,7 +32,7 @@
           <% if @search_results_group.present? %>
             <p class="search-header">Group Results</p>
             <% @search_results_group.each do |result| %>
-              <li><%= link_to result.name, group_path(result) %></li>
+              <li><%= link_to result.name, group_path(result), class: "link" %></li>
             <% end %>
           <HR WIDTH="90%">
           <% end %>
@@ -40,7 +40,7 @@
           <% if @search_results_user.present? %>
             <p class="search-header">User Results</p>
             <% @search_results_user.each do |result| %>
-              <li><%= link_to result.username, user_path(result) %></li>
+              <li><%= link_to result.username, user_path(result), class: "link" %></li>
             <% end %>
           <HR WIDTH="90%">
           <% end %>
@@ -48,7 +48,7 @@
           <% if @search_results_event.present? %>
             <p class="search-header">Event Results</p>
             <% @search_results_event.each do |result| %>
-              <li><%= link_to result.title, event_path(result) %></li>
+              <li><%= link_to result.title, event_path(result), class: "link" %></li>
             <% end %>
           <HR WIDTH="90%">
           <% end %>
