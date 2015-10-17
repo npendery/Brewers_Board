@@ -313,4 +313,4 @@ Review.create!(title: "So hoppy!", rating: 5, recipe: recipe2, user: user1)
 
 Review.create!(title: "Bitterness", description: "Really like the flavor, would make it a little more bitter though", rating: 4, recipe: recipe2, user: user3)
 
-Review.create!(title: "Great wheat flavor", rating: 4, recipe: recipe6, user: user1)
+Review.create!(title: "Great wheat flavor", rating: 4, recipe: recipe6, user: user2)
