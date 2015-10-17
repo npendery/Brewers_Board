@@ -167,16 +167,16 @@ recipe3 = Recipe.create!(name: "Belgian Tripel",
                              2 ounces Hallertau hops - 60 minutes\r\n
                              6 gallons of tap water, split\r\n
                              2 Liter starter of liquid Belgian Ale yeast (Whitelabs WLP500 or Wyeast 1214)",
-               instructions: "1. If possible, place 3 gallons in the refrigerator to cool in a sanitized container.
-                              2. Tie the Carapils malt in a large mesh grain bag or hop bag. Place the bag in 3 gallons of water in a 5 gallon pot and immerse the grain.
-                              3. Begin to heat, making sure mesh bag isn’t sitting directly on the bottom of the pot. Remove the grain bag when the temperature reaches 170°.
-                              4. Bring wort to a vigorous boil. As water is heating, slowly add 2 pounds of Pilsner liquid malt extract, stirring constantly until completely dissolved. When the boil begins, add 2 ounces Hallertau hops in a mesh bag.
-                              5. After 45 minutes of boiling has passed, add remaining 7 pounds of Pilsner liquid malt extract and 1 pound of Belgian candy sugar, stirring constantly until completely dissolved.
-                              6. After total of 60 minutes of boil, remove from heat. Warning: After wort cools below 180°F everything that touches it should be sanitary, and exposure to open air should be limited as much as possible.
-                              7. Cool wort by placing pot in ice bath until it is below 85°F. Transfer to sanitized fermentor (either a carboy or a fermentation bucket). Top off to make 5 gallons using refrigerated water.
-                              8. Use a sanitized auto-siphon racking cane to remove enough wort to take a gravity reading with your hydrometer. Make a note of this number, since you will be using it to calculate the actual alcohol content when it's done fermenting. The reading should be around 1.075.
-                              9. Carefully pour yeast into cooled wort (it should be below 70°F), and agitate vigorously. Cover fermentor with a sanitized stopper and airlock. Ferment in dark place, keeping ambient temperature consistent, preferably between 68 and 70°F.
-                              10. After primary fermentation is complete (take at least two consistent gravity readings), transfer to a secondary carboy for conditioning as discussed here and store as cool as possible.
+               instructions: "1. If possible, place 3 gallons in the refrigerator to cool in a sanitized container.\r\n
+                              2. Tie the Carapils malt in a large mesh grain bag or hop bag. Place the bag in 3 gallons of water in a 5 gallon pot and immerse the grain.\r\n
+                              3. Begin to heat, making sure mesh bag isn’t sitting directly on the bottom of the pot. Remove the grain bag when the temperature reaches 170°.\r\n
+                              4. Bring wort to a vigorous boil. As water is heating, slowly add 2 pounds of Pilsner liquid malt extract, stirring constantly until completely dissolved. When the boil begins, add 2 ounces Hallertau hops in a mesh bag.\r\n
+                              5. After 45 minutes of boiling has passed, add remaining 7 pounds of Pilsner liquid malt extract and 1 pound of Belgian candy sugar, stirring constantly until completely dissolved.\r\n
+                              6. After total of 60 minutes of boil, remove from heat. Warning: After wort cools below 180°F everything that touches it should be sanitary, and exposure to open air should be limited as much as possible.\r\n
+                              7. Cool wort by placing pot in ice bath until it is below 85°F. Transfer to sanitized fermentor (either a carboy or a fermentation bucket). Top off to make 5 gallons using refrigerated water.\r\n
+                              8. Use a sanitized auto-siphon racking cane to remove enough wort to take a gravity reading with your hydrometer. Make a note of this number, since you will be using it to calculate the actual alcohol content when it's done fermenting. The reading should be around 1.075.\r\n
+                              9. Carefully pour yeast into cooled wort (it should be below 70°F), and agitate vigorously. Cover fermentor with a sanitized stopper and airlock. Ferment in dark place, keeping ambient temperature consistent, preferably between 68 and 70°F.\r\n
+                              10. After primary fermentation is complete (take at least two consistent gravity readings), transfer to a secondary carboy for conditioning as discussed here and store as cool as possible.\r\n
                               11. Bottle after another four to six weeks using enough priming sugar for a high level of carbonation",
                yielder: "5 gallons", user: nick)
 
