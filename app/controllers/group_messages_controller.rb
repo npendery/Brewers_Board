@@ -3,17 +3,17 @@ class GroupMessagesController < ApplicationController
   before_action :authorize_user, only: [:edit, :update, :destroy]
 
   def index
-    @group = Group.find(params[:group_id])
+    find_group
     @group_messages = @group.group_messages
   end
 
   def new
-    @group = Group.find(params[:group_id])
+    find_group
     @group_message = GroupMessage.new
   end
 
   def create
-    @group = Group.find(params[:group_id])
+    find_group
     @group_message = GroupMessage.new(group_message_params)
     @group_message.group = @group
     @group_message.user = current_user
@@ -27,12 +27,12 @@ class GroupMessagesController < ApplicationController
   end
 
   def edit
-    @group_message = GroupMessage.find(params[:id])
+    find_group_message
     @group = @group_message.group
   end
 
   def update
-    @group_message = GroupMessage.find(params[:id])
+    find_group_message
     @group = @group_message.group
     if @group_message.update(group_message_params)
       flash[:notice] = 'Message updated'
@@ -44,7 +44,7 @@ class GroupMessagesController < ApplicationController
   end
 
   def destroy
-    @group_message = GroupMessage.find(params[:id])
+    find_group_message
     @group = @group_message.group
     @group_message.destroy
 
@@ -53,6 +53,14 @@ class GroupMessagesController < ApplicationController
   end
 
   protected
+
+  def find_group
+    @group = Group.find(params[:group_id])
+  end
+
+  def find_group_message
+    @group_message = GroupMessage.find(params[:id])
+  end
 
   def authorize_user
     @group_message = GroupMessage.find(params[:id])

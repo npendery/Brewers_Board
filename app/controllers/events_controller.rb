@@ -3,17 +3,17 @@ class EventsController < ApplicationController
   before_action :authorize_user, only: [:edit, :update, :destroy]
 
   def index
-    @group = Group.find(params[:group_id])
+    find_group
     @events = @group.events
   end
 
   def new
-    @group = Group.find(params[:group_id])
+    find_group
     @event = Event.new
   end
 
   def create
-    @group = Group.find(params[:group_id])
+    find_group
     @event = Event.new(event_params)
     @event.group = @group
     @event.user = current_user
@@ -27,12 +27,12 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find(params[:id])
+    find_event
     @group = @event.group
   end
 
   def update
-    @event = Event.find(params[:id])
+    find_event
     @group = @event.group
     if @event.update(event_params)
       flash[:notice] = 'Event updated'
@@ -44,7 +44,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @event = Event.find(params[:id])
+    find_event
     @group = @event.group
     @event.destroy
 
@@ -54,8 +54,16 @@ class EventsController < ApplicationController
 
   protected
 
-  def authorize_user
+  def find_group
+    @group = Group.find(params[:group_id])
+  end
+
+  def find_event
     @event = Event.find(params[:id])
+  end
+
+  def authorize_user
+    find_event
     if !(@event.user == current_user) && current_user.admin == false
       raise ActionController::RoutingError.new("Not Found")
     end

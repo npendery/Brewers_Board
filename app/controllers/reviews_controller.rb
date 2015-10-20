@@ -7,12 +7,12 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @recipe = Recipe.find(params[:recipe_id])
+    find_recipe
     @review = Review.new
   end
 
   def create
-    @recipe = Recipe.find(params[:recipe_id])
+    find_recipe
     @review = Review.new(review_params)
     @review.recipe = @recipe
     @review.user = current_user
@@ -26,12 +26,12 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @review = Review.find(params[:id])
+    find_review
     @recipe = @review.recipe
   end
 
   def update
-    @review = Review.find(params[:id])
+    find_review
     @recipe = @review.recipe
     if @review.update(review_params)
       flash[:notice] = 'Review Updated'
@@ -43,7 +43,7 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @review = Review.find(params[:id])
+    find_review
     @recipe = @review.recipe
     @review.destroy
 
@@ -53,8 +53,16 @@ class ReviewsController < ApplicationController
 
   protected
 
-  def authorize_user
+  def find_review
     @review = Review.find(params[:id])
+  end
+
+  def find_recipe
+    @recipe = Recipe.find(params[:recipe_id])
+  end
+
+  def authorize_user
+    find_review
     if !(@review.user == current_user) && current_user.admin == false
       raise ActionController::RoutingError.new("Not Found")
     end
